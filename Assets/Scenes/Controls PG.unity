@@ -38,6 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -218,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe43fbd5bdfbec044bac5f8af7a73a12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2867949219589707905}
+  target: {fileID: 1625993742}
   smoothSpeed: 0.6
   offset: {x: 0, y: 0, z: -10}
 --- !u!1 &11813619
@@ -6248,6 +6249,7 @@ GameObject:
   - component: {fileID: 6621134077401535226}
   - component: {fileID: 5845496142953002735}
   - component: {fileID: 3902340196910548353}
+  - component: {fileID: 6621134077401535227}
   m_Layer: 8
   m_Name: Sentinel
   m_TagString: Untagged
@@ -6510,6 +6512,7 @@ GameObject:
   - component: {fileID: 3345530489726134546}
   - component: {fileID: 1894176699456392224}
   - component: {fileID: 1639325287356968828}
+  - component: {fileID: 8500190843741337729}
   m_Layer: 8
   m_Name: Ninja
   m_TagString: Untagged
@@ -6532,6 +6535,7 @@ GameObject:
   - component: {fileID: 7143474156631422777}
   - component: {fileID: 864248698549680488}
   - component: {fileID: 4074583019636718675}
+  - component: {fileID: 8803927077186324131}
   m_Layer: 8
   m_Name: Druid
   m_TagString: Untagged
@@ -7055,6 +7059,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6621134077401535227
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2533796129606226544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!50 &6717047920818374556
 Rigidbody2D:
   serializedVersion: 4
@@ -7268,6 +7302,7 @@ GameObject:
   - component: {fileID: 5256549028733274228}
   - component: {fileID: 7903394415332824253}
   - component: {fileID: 7903394415332824252}
+  - component: {fileID: 7903394415332824255}
   m_Layer: 8
   m_Name: DayWalker
   m_TagString: Untagged
@@ -7368,6 +7403,36 @@ MonoBehaviour:
   shootDelay: 0.5
   isMelee: 0
   meleePrefab: {fileID: 0}
+--- !u!114 &7903394415332824255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7903394415332824251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!50 &8034797827080547219
 Rigidbody2D:
   serializedVersion: 4
@@ -7410,6 +7475,7 @@ GameObject:
   - component: {fileID: 6020361116928607468}
   - component: {fileID: 7018623013585361328}
   - component: {fileID: 3644828605657918839}
+  - component: {fileID: 8051299248693752404}
   m_Layer: 8
   m_Name: Spirit
   m_TagString: Untagged
@@ -7417,6 +7483,36 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8051299248693752404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051299248693752403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8080444048774509285
 GameObject:
   m_ObjectHideFlags: 0
@@ -7432,6 +7528,7 @@ GameObject:
   - component: {fileID: 762188206814248713}
   - component: {fileID: 6717047920818374556}
   - component: {fileID: 9093268492740912678}
+  - component: {fileID: 9093268492740912679}
   m_Layer: 8
   m_Name: Krotos
   m_TagString: Untagged
@@ -7525,6 +7622,36 @@ MonoBehaviour:
   isRunningBackwards: 0
   isStrafingLeft: 0
   isStrafingRight: 0
+--- !u!114 &8500190843741337729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3829644377265467050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8733919698007536812
 GameObject:
   m_ObjectHideFlags: 0
@@ -7540,6 +7667,7 @@ GameObject:
   - component: {fileID: 7505701506278301232}
   - component: {fileID: 8034797827080547219}
   - component: {fileID: 8784327043020360135}
+  - component: {fileID: 8784327043020360136}
   m_Layer: 8
   m_Name: Spearman
   m_TagString: Untagged
@@ -7582,6 +7710,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.05342512}
   serializedVersion: 2
   m_Radius: 0.05970852
+--- !u!114 &8784327043020360136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8733919698007536812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!4 &8803927077186324130
 Transform:
   m_ObjectHideFlags: 0
@@ -7597,6 +7755,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8803927077186324131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3898793937596889912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &8878782732734386851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7712,6 +7900,36 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.05342512}
   serializedVersion: 2
   m_Radius: 0.05851014
+--- !u!114 &9093268492740912679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8080444048774509285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 619548d4992b54709b31970b066c8f60, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -7719,6 +7937,7 @@ SceneRoots:
   - {fileID: 10213671}
   - {fileID: 1140960932}
   - {fileID: 83234543}
+  - {fileID: 1424324435}
   - {fileID: 1625993742}
   - {fileID: 8803927077186324130}
   - {fileID: 5998602558669151683}
@@ -7728,4 +7947,3 @@ SceneRoots:
   - {fileID: 2867949219589707905}
   - {fileID: 448985086827296554}
   - {fileID: 3795011373411316591}
-  - {fileID: 1424324435}

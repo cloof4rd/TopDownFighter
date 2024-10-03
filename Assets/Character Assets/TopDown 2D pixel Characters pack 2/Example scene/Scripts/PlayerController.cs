@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.InputSystem;
 
 namespace SmallScaleInc.TopDownPixelCharactersPack1
 {
@@ -50,11 +51,11 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         void Update()
         {
-            HandleMovement();    // Left joystick for movement
-            RotateCharacter();    // Right joystick for facing direction
+            //HandleMovement();    // Left joystick for movement
+            //RotateCharacter();    // Right joystick for facing direction
 
             // Check if movement keys are pressed (based on joystick input)
-            if (movementDirection.magnitude > 0)
+            if(movementDirection.magnitude > 0)
             {
                 isRunning = true;
             }
@@ -64,15 +65,15 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
             }
 
             // Trigger flip animation (Left Shift key)
-            if (Input.GetKeyDown(KeyCode.LeftShift) && !isRolling)
+            if(Input.GetKeyDown(KeyCode.LeftShift) && !isRolling)
             {
                 TriggerFlipAnimation();
             }
 
             // Handle crouching
-            if (Input.GetKeyDown(KeyCode.C))
+            if(Input.GetKeyDown(KeyCode.C))
             {
-                if (isShapeShifter && isActive)
+                if(isShapeShifter && isActive)
                 {
                     StartCoroutine(ShapeShiftDelayed());
                 }
@@ -80,10 +81,10 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
             }
 
             // Handle special moves and queueing
-            HandleSpecialMoveQueue();
+            //HandleSpecialMoveQueue();
 
             // Handle attack logic
-            if (Input.GetMouseButtonDown(0)) // Left mouse button
+            if(Input.GetMouseButtonDown(0)) // Left mouse button
             {
                 PerformQueuedAttack();
             }
@@ -117,30 +118,30 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         void HandleSpecialMoveQueue()
         {
-            if (isActive)
+            if(isActive)
             {
                 // Queue special moves (1-6) for the next attack
-                if (Input.GetKeyDown(KeyCode.Alpha1))
+                if(Input.GetKeyDown(KeyCode.Alpha1))
                 {
                     queuedSpecialMove = 1;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha2))
+                else if(Input.GetKeyDown(KeyCode.Alpha2))
                 {
                     queuedSpecialMove = 2;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha3))
+                else if(Input.GetKeyDown(KeyCode.Alpha3))
                 {
                     queuedSpecialMove = 3;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha4))
+                else if(Input.GetKeyDown(KeyCode.Alpha4))
                 {
                     queuedSpecialMove = 4;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha5))
+                else if(Input.GetKeyDown(KeyCode.Alpha5))
                 {
                     queuedSpecialMove = 5;
                 }
-                else if (Input.GetKeyDown(KeyCode.Alpha6))
+                else if(Input.GetKeyDown(KeyCode.Alpha6))
                 {
                     queuedSpecialMove = 6;
                 }
@@ -150,7 +151,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         void PerformQueuedAttack()
         {
             // If a special move is queued, execute it instead of a regular attack
-            switch (queuedSpecialMove)
+            switch(queuedSpecialMove)
             {
                 case 1:
                     StartCoroutine(DeploySpecial1Delayed());
@@ -165,7 +166,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
                     // Add the special move logic for key 4 if needed
                     break;
                 case 5:
-                    if (isSummoner)
+                    if(isSummoner)
                     {
                         StartCoroutine(DeployHookDelayed());
                     }
@@ -189,14 +190,14 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         void PerformAttack()
         {
             // Add your attack logic here (ranged or melee)
-            if (isRanged)
+            if(isRanged)
             {
                 Invoke(nameof(DelayedShoot), shootDelay);
             }
-            else if (isMelee)
+            else if(isMelee)
             {
                 // Add melee attack logic if needed
-                if (meleePrefab != null)
+                if(meleePrefab != null)
                 {
                     GameObject meleeAttack = Instantiate(meleePrefab, transform.position, Quaternion.identity);
                     Destroy(meleeAttack, 0.5f); // Destroy melee attack after a delay
@@ -207,25 +208,80 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         void FixedUpdate()
         {
             // Apply movement to the character based on the left joystick input
-            if (movementDirection != Vector2.zero)
+            if(movementDirection != Vector2.zero)
             {
                 rb.MovePosition(rb.position + movementDirection * speed * Time.fixedDeltaTime);
             }
         }
 
-        void HandleMovement()
-        {
-            // Get input from the left joystick
-            float moveX = Input.GetAxis("Horizontal"); // Left joystick horizontal axis
-            float moveY = Input.GetAxis("Vertical");   // Left joystick vertical axis
+        //void HandleMovement()
+        //{
+        //    // Get input from the left joystick
+        //    float moveX = Input.GetAxis("Horizontal"); // Left joystick horizontal axis
+        //    float moveY = Input.GetAxis("Vertical");   // Left joystick vertical axis
 
-            // Set movement direction based on joystick input
-            movementDirection = new Vector2(moveX, moveY);
+        //    // Set movement direction based on joystick input
+        //    movementDirection = new Vector2(moveX, moveY);
+
+        //    // Normalize movement direction to ensure consistent speed
+        //    if (movementDirection.magnitude > 1)
+        //    {
+        //        movementDirection.Normalize();
+        //    }
+        //}
+
+        private void OnMove(InputValue inputValue)
+        {
+            movementDirection = inputValue.Get<Vector2>();
 
             // Normalize movement direction to ensure consistent speed
-            if (movementDirection.magnitude > 1)
+            if(movementDirection.magnitude > 1)
             {
                 movementDirection.Normalize();
+            }
+        }
+
+        private void OnLook(InputValue inputValue)
+        {
+            var lookDirection = inputValue.Get<Vector2>();
+
+            // If there is input from the right joystick, rotate the character to face that direction
+            if(lookDirection.magnitude > 0.1f) // Avoid very small values
+            {
+                float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg;
+                //transform.rotation = Quaternion.Euler(0, 0, angle);
+            }
+        }
+
+        private void OnButtonSouth(InputValue inputValue)
+        {
+            if(isActive)
+            {
+                queuedSpecialMove = 1;
+            }
+        }
+
+        private void OnButtonEast(InputValue inputValue)
+        {
+            if(isActive)
+            {
+                queuedSpecialMove = 2;
+            }
+        }
+
+        private void OnButtonWest(InputValue inputValue)
+        {
+            if(isActive)
+            {
+                queuedSpecialMove = 3;
+            }
+        }
+
+        private void OnButtonNorth(InputValue inputValue)
+        {
+            if(isActive)
+            {
+                queuedSpecialMove = 4;
             }
         }
 
@@ -236,7 +292,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
             float aimY = Input.GetAxis("RightStickVertical");   // Right joystick vertical axis
 
             // If there is input from the right joystick, rotate the character to face that direction
-            if (new Vector2(aimX, aimY).magnitude > 0.1f) // Avoid very small values
+            if(new Vector2(aimX, aimY).magnitude > 0.1f) // Avoid very small values
             {
                 float angle = Mathf.Atan2(aimY, aimX) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
@@ -246,7 +302,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         void HandleCrouching()
         {
             isCrouching = !isCrouching; // Toggle crouching
-            if (isCrouching && isStealth)
+            if(isCrouching && isStealth)
             {
                 spriteRenderer.color = new Color(0.5f, 0.5f, 0.5f, 0.5f);
             }
@@ -268,7 +324,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
             GameObject projectileInstance = Instantiate(projectilePrefab, transform.position, Quaternion.Euler(0, 0, angle));
             Rigidbody2D rbProjectile = projectileInstance.GetComponent<Rigidbody2D>();
-            if (rbProjectile != null)
+            if(rbProjectile != null)
             {
                 rbProjectile.velocity = direction * projectileSpeed;
             }
@@ -279,7 +335,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         IEnumerator Quickshot()
         {
             yield return new WaitForSeconds(0.1f);
-            for (int i = 0; i < 5; i++)
+            for(int i = 0; i < 5; i++)
             {
                 Vector2 fireDirection = new Vector2(Mathf.Cos(transform.eulerAngles.z * Mathf.Deg2Rad), Mathf.Sin(transform.eulerAngles.z * Mathf.Deg2Rad));
                 ShootProjectile(fireDirection);
@@ -293,7 +349,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
             float timeBetweenShots = 0.9f / 8;
             yield return new WaitForSeconds(initialDelay);
 
-            for (int i = 0; i < 8; i++)
+            for(int i = 0; i < 8; i++)
             {
                 float angle = i * 45; // 45-degree increments for 8 directions
                 float radianAngle = Mathf.Deg2Rad * angle;
@@ -307,7 +363,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         IEnumerator DeployAoEDelayed()
         {
-            if (AoEPrefab != null)
+            if(AoEPrefab != null)
             {
                 GameObject aoeInstance;
                 Vector2 deployPosition = (Vector2)transform.position + movementDirection.normalized;
@@ -319,7 +375,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         IEnumerator DeployHookDelayed()
         {
-            if (HookPrefab != null)
+            if(HookPrefab != null)
             {
                 Vector2 direction = movementDirection.normalized;
                 Vector2 hookPosition = (Vector2)transform.position + direction;
@@ -332,7 +388,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         IEnumerator DeploySpecial1Delayed()
         {
-            if (Special1Prefab != null)
+            if(Special1Prefab != null)
             {
                 Vector2 deployPosition = (Vector2)transform.position + movementDirection.normalized;
                 GameObject specialInstance = Instantiate(Special1Prefab, deployPosition, Quaternion.identity);
@@ -344,7 +400,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         // ShapeShift logic
         IEnumerator ShapeShiftDelayed()
         {
-            if (ShapeShiftPrefab != null)
+            if(ShapeShiftPrefab != null)
             {
                 yield return new WaitForSeconds(0.001f);
                 GameObject shapeShiftInstance = Instantiate(ShapeShiftPrefab, transform.position, Quaternion.identity);
