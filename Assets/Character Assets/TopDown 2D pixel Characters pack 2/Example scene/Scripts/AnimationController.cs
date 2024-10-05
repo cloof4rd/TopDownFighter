@@ -434,16 +434,18 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
         }
 
 
+
         void RestoreDirectionAfterAttack()
         {
-            // Reset the character to face the last known direction after an attack
+            // Instead of forcing the player to face a certain direction,
+            // we can keep the direction they are currently facing.
+            
             animator.SetBool("isAttackAttacking", false);
             animator.SetBool("isAttackRunning", false);
             animator.SetBool("isRunning", false);
-            SetDirectionBools(false, false, false, false, false, false, false, false); // Reset all directions
-            animator.SetBool(currentDirection, true); // Restore the last known direction
+ 
+            animator.SetBool(currentDirection, true);
         }
-
 
         //Take Damage:
         public void TriggerTakeDamageAnimation()
