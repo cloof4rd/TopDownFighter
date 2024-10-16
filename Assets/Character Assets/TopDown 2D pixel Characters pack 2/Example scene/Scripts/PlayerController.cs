@@ -363,7 +363,7 @@ namespace SmallScaleInc.TopDownPixelCharactersPack1
 
         IEnumerator DeployAoEDelayed()
         {
-            if(AoEPrefab != null)
+            if(AoEPrefab != null) 
             {
                 GameObject aoeInstance;
                 Vector2 deployPosition = (Vector2)transform.position + movementDirection.normalized;
