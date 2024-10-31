@@ -14,4 +14,5 @@ public class ConstConfig
     public const int BATTLE_SCENE_INDEX = 1;
     public static Vector2Int RoleMinMaxIndex = new Vector2Int(1, 9);
     public static int LayerMaskBlock = LayerMask.GetMask("Block");
+    public static int LayerMaskPlayer = LayerMask.GetMask("Player");
 }

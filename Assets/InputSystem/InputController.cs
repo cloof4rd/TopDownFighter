@@ -28,6 +28,24 @@ public class InputController : MonoBehaviour
         await Task.Yield();
         role.inputData.isAttack1 = false;
     }
+    public async void OnAttack2()
+    {
+        role.inputData.isAttack2 = true;
+        await Task.Yield();
+        role.inputData.isAttack2 = false;
+    }
+    public async void OnAttack3()
+    {
+        role.inputData.isAttack3 = true;
+        await Task.Yield();
+        role.inputData.isAttack3 = false;
+    }
+    public async void OnAttack4()
+    {
+        role.inputData.isAttack4 = true;
+        await Task.Yield();
+        role.inputData.isAttack4 = false;
+    }
 
     public async void OnBlockSkill()
     {

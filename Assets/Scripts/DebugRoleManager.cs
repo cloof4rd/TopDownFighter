@@ -15,7 +15,7 @@ public class DebugRoleManager : MonoBehaviour
     public TextMeshPro textProPrefab;
     private void Awake()
     {
-        int columnCount = 5;
+        int columnCount = 8;// idle idle2 run takeDamage  attack1 attack2 attack3 attack4
         for (int x = 0; x < columnCount; x++) // for anim count
         {
             var row = new List<Role>();
@@ -25,22 +25,17 @@ public class DebugRoleManager : MonoBehaviour
                 row.Add(SpawnRole(new Vector2(x * gapX, y * gapY), y));
             }
         }
-
-
         SetInputData();
     }
     private void SetInputData()
     {
         SpawnDisplayName("Idle", 0);
 
-        SpawnDisplayName("Attack1", 1);
-        roles[1].ForEach(x => x.inputData.isAttack1 = true);
+        SpawnDisplayName("Idle2", 1);
+        roles[1].ForEach(x => x.inputData.isBlockSkill = true);
 
-        SpawnDisplayName("Idle2", 2);
-        roles[2].ForEach(x => x.inputData.isBlockSkill = true);
-
-        SpawnDisplayName("Run", 3);
-        roles[3].ForEach(x =>
+        SpawnDisplayName("Run", 2);
+        roles[2].ForEach(x =>
         {
             x.inputData.moveDir = new Vector2(0, 0);
             x.inputData.isMoveing = true;
@@ -50,15 +45,28 @@ public class DebugRoleManager : MonoBehaviour
         {
             while (true)
             {
-                var frameLength = roles[4][0].frameCountPerSeconed;
+                var frameLength = roles[3][0].frameCountPerSeconed;
                 var length = ConstConfig.ArtRoleSpriteColumnCount / frameLength;
                 yield return new WaitForSeconds(length+0.1f);
-                roles[4].ForEach(x => x.ReceiveDamage(0));
+                roles[3].ForEach(x => x.ReceiveDamage(0));
             }
         }
         StartCoroutine(DelayToDamage());
 
-        SpawnDisplayName("TakeDamage", 4);
+        SpawnDisplayName("TakeDamage", 3);
+
+
+        SpawnDisplayName("Attack1", 4);
+        roles[4].ForEach(x => x.inputData.isAttack1 = true);
+
+        SpawnDisplayName("Attack2", 5);
+        roles[5].ForEach(x => x.inputData.isAttack2 = true);
+
+        SpawnDisplayName("Attack3", 6);
+        roles[6].ForEach(x => x.inputData.isAttack3 = true);
+
+        SpawnDisplayName("Attack4", 7);
+        roles[7].ForEach(x => x.inputData.isAttack4 = true);
     }
     private void Update()
     {

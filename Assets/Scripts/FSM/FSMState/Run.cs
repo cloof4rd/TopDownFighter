@@ -17,6 +17,8 @@ public class Run : RoleBasicState
             stateMachine.Change<Idle>();
         if (role.inputData.isAttack1)
             stateMachine.Change<Attack1>();
+        if (role.inputData.isAttack2)
+            stateMachine.Change<Attack2>();
         if (role.inputData.isBlockSkill)
             stateMachine.Change<Idle2>();
     }

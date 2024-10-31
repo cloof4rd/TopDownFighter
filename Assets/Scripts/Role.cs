@@ -10,11 +10,47 @@ public class Role : MonoBehaviour
 
     [Header("Anim Direction")]
     public Direction direction = Direction.E;
+    public Vector2 getForward
+    {
+        get
+        {
+            switch (direction)
+            {
+                case Direction.E:
+                    return new Vector2(1, 0);
+                case Direction.SE:
+                    return new Vector2(1, -1);
+                case Direction.S:
+                    return new Vector2(0, -1);
+                case Direction.SW:
+                    return new Vector2(-1, -1);
+                case Direction.W:
+                    return new Vector2(-1, 0);
+                case Direction.NW:
+                    return new Vector2(-1, 1);
+                case Direction.N:
+                    return new Vector2(0, 1);
+                case Direction.NE:
+                    return new Vector2(1, 1);
+                default:
+                    break;
+            }
+            return transform.forward;
+        }
+    }
+    public Vector2 getRight
+    {
+        get
+        {
+            return Quaternion.Euler(0, 0, -90) * getForward;
+        }
+    }
     public int frameCountPerSeconed = 30;
     public RoleFSMStateMachine animFSM;
 
 
     public bool isCanMove = true;
+    public bool isAttacking = false;
     public InputData inputData = new InputData();
 
     public float hp = 100;
@@ -44,7 +80,7 @@ public class Role : MonoBehaviour
 
     private void Update()
     {
-        if (inputData.isMoveing)
+        if (inputData.isMoveing && !isAttacking)
         {
             UpdateDirectionByInput();
             UpdateMovement();

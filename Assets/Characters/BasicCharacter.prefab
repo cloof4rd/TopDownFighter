@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2600825623943466863}
   - component: {fileID: 7249922455884396009}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   - component: {fileID: 4534771048033006191}
   - component: {fileID: 4908480811357671499}
   - component: {fileID: 4015376447573699042}
-  m_Layer: 8
+  m_Layer: 7
   m_Name: BasicCharacter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,6 +141,9 @@ MonoBehaviour:
     moveDir: {x: 0, y: 0}
     isMoveing: 0
     isAttack1: 0
+    isAttack2: 0
+    isAttack3: 0
+    isAttack4: 0
     isBlockSkill: 0
   hp: 100
   isBlockBullet: 0

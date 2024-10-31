@@ -1,4 +1,5 @@
-﻿using System;
+﻿using log4net.Util;
+using System;
 using UnityEngine;
 
 namespace YogiGameCore.Utils
@@ -147,7 +148,49 @@ namespace YogiGameCore.Utils
 
             Debug.DrawLine(lastPoint, currentPoint, color, duration);
         }
-
+        public static void DrawSector(Vector3 position, Vector3 forward, float angle, float radius, float duration, Panel displayPanel, float viewAngleStep = 30)
+        {
+            var halfAngle = angle / 2.0f;
+            Vector3 forward_left = Vector3.zero;
+            switch (displayPanel)
+            {
+                case Panel.XZ:
+                    forward_left = Quaternion.Euler(0, -halfAngle, 0) * forward * radius;
+                    break;
+                case Panel.XY:
+                    forward_left = Quaternion.Euler(0, 0, -halfAngle) * forward * radius;
+                    break;
+                case Panel.ZY:
+                    forward_left = Quaternion.Euler(-halfAngle, 0, 0) * forward * radius;
+                    break;
+                default:
+                    break;
+            }
+            // 依次处理每一条射线
+            for (int i = 0; i <= viewAngleStep; i++)
+            {
+                Vector3 v = Vector3.zero;
+                switch (displayPanel)
+                {
+                    case Panel.XZ:
+                        // 每条射线都在forward_left的基础上偏转一点，最后一个正好偏转90度到视线最右侧
+                        v = Quaternion.Euler(0, (angle / viewAngleStep) * i, 0) * forward_left;
+                        break;
+                    case Panel.XY:
+                        v = Quaternion.Euler(0, 0, (angle / viewAngleStep) * i) * forward_left;
+                        break;
+                    case Panel.ZY:
+                        v = Quaternion.Euler((angle / viewAngleStep) * i, 0, 0) * forward_left;
+                        break;
+                    default:
+                        break;
+                }
+                // Player位置加v，就是射线终点pos
+                Vector3 pos = position + v;
+                // 从玩家位置到pos画线段，只会在编辑器里看到
+                Debug.DrawLine(position, pos, Color.red, duration);
+            }
+        }
         public static void DrawBox(Vector3 position, Vector3 halfExtent, Color color, float duration,
             bool depthTest = true)
         {
@@ -200,10 +243,10 @@ namespace YogiGameCore.Utils
             Vector3 left = Quaternion.LookRotation(direction) * Quaternion.Euler(-arrowHeadAngle, 0, 0) * new Vector3(0, 0, 1);
             Gizmos.DrawRay(position + direction, -right * arrowHeadLength);
             Gizmos.DrawRay(position + direction, -left * arrowHeadLength);
-            
+
             Gizmos.DrawRay(position, right * arrowHeadLength);
             Gizmos.DrawRay(position, left * arrowHeadLength);
         }
-       
+
     }
 }

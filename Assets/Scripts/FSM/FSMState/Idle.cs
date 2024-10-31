@@ -14,6 +14,12 @@ public class Idle : RoleBasicState
             stateMachine.Change<Run>();
         if (role.inputData.isAttack1)
             stateMachine.Change<Attack1>();
+        if (role.inputData.isAttack2)
+            stateMachine.Change<Attack2>();
+        if (role.inputData.isAttack3)
+            stateMachine.Change<Attack3>();
+        if (role.inputData.isAttack4)
+            stateMachine.Change<Attack4>();
         if (role.inputData.isBlockSkill)
             stateMachine.Change<Idle2>();
     }

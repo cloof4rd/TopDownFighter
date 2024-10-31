@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using YogiGameCore.Utils;
 
 [CreateAssetMenu(fileName = "roleConfig", menuName = "RoleConfig", order = 1)]
 public class RoleConfig : ScriptableObject
@@ -35,6 +37,66 @@ public class AnimSpeedPair
     public string animName;
     public float animSpeed = 1;
 
-    public float bulletSpawnTime;
+    public List<FXConfig> fxs;
+    public List<BulletConfig> bullets;
+}
+[System.Serializable]
+public class FXConfig
+{
+    [System.NonSerialized, HideInInspector]
+    public FX prefab;
+
+
+    public int spawnFrameIndex;
+    public string fxName;
+    // the offset of the orientaion based on the role
+    // x: role Forward Distance,y: role Right Distance
+    public Vector2 fxPosition;
+    public float lifeTime = 1.0f;
+    public bool isDestroyWhenAnimOver = true;
+
+    public void Init()
+    {
+        if (this.fxName.IsNotNullAndEmpty() && this.prefab == null)
+        {
+            this.prefab = Resources.Load<FX>(this.fxName);
+        }
+    }
+}
+[System.Serializable]
+public class BulletConfig
+{
+    [System.NonSerialized, HideInInspector]
+    public Bullet prefab;
+    [NonSerialized, HideInInspector]
+    public int hitLayerMask;
+
+    // Spawn
+    [Range(-1, 14)]
+    public int spawnFrameIndex;
     public string bulletName;
+    // the offset of the orientaion based on the role
+    // x: role Forward Distance,y: role Right Distance
+    public Vector2 bulletPosition;
+    public float lifeTime = 1.0f;
+    public bool isDestroyWhenAnimOver = true;
+
+    // Select
+    public BulletSelectType selectType;
+    public float radius = 1.0f;
+    public float sectorAngle = 0f;
+
+    // Damage
+    public float damage = 1;
+    public void Init()
+    {
+        hitLayerMask = ConstConfig.LayerMaskPlayer;
+        if (this.bulletName.IsNotNullAndEmpty() && this.prefab == null)
+            this.prefab = Resources.Load<Bullet>(this.bulletName);
+    }
+}
+public enum TargetType
+{
+    Enemy,
+    Self
 }

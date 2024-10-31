@@ -55,9 +55,45 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": false
                 },
                 {
+                    ""name"": ""Attack2"",
+                    ""type"": ""Button"",
+                    ""id"": ""3c93a505-ce6e-45b9-ab10-ce7e9357c7e0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack3"",
+                    ""type"": ""Button"",
+                    ""id"": ""a92b8452-8578-44d1-aa1b-fb883ba662a2"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Attack4"",
+                    ""type"": ""Button"",
+                    ""id"": ""531a7e62-db30-4dc2-a081-dbfeb0df247b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
                     ""name"": ""BlockSkill"",
                     ""type"": ""Button"",
                     ""id"": ""2afe6944-e1ef-4c13-ad26-bcd4276df2ad"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Slip"",
+                    ""type"": ""Button"",
+                    ""id"": ""3f2c9a41-0411-459e-8dbe-43fdcf215e0a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -233,7 +269,7 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""143bb1cd-cc10-4eca-a2f0-a3664166fe91"",
-                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""path"": ""<Gamepad>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": "";Gamepad"",
@@ -304,6 +340,94 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""BlockSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce67fd67-76a1-4268-b261-75526e862b66"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c3a2d8ef-2a22-4136-897f-40e831948419"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9125846d-cb69-4566-ace8-2564aeb6cf7e"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""fb87007b-7314-4f44-ac21-abcf513c44ff"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""b34f486e-c5b2-41f3-96a4-19d5d80ab0de"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bef1d512-de41-477b-8056-a63ff053665b"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Attack4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""8ac29524-f987-49a1-8b47-adc8d3d9d5e0"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard&Mouse"",
+                    ""action"": ""Slip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e1ece24a-dfce-4d6b-ac75-f6ca4bc6b1b3"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Slip"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -894,7 +1018,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Move = m_Gameplay.FindAction("Move", throwIfNotFound: true);
         m_Gameplay_Look = m_Gameplay.FindAction("Look", throwIfNotFound: true);
         m_Gameplay_Attack1 = m_Gameplay.FindAction("Attack1", throwIfNotFound: true);
+        m_Gameplay_Attack2 = m_Gameplay.FindAction("Attack2", throwIfNotFound: true);
+        m_Gameplay_Attack3 = m_Gameplay.FindAction("Attack3", throwIfNotFound: true);
+        m_Gameplay_Attack4 = m_Gameplay.FindAction("Attack4", throwIfNotFound: true);
         m_Gameplay_BlockSkill = m_Gameplay.FindAction("BlockSkill", throwIfNotFound: true);
+        m_Gameplay_Slip = m_Gameplay.FindAction("Slip", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -971,7 +1099,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Move;
     private readonly InputAction m_Gameplay_Look;
     private readonly InputAction m_Gameplay_Attack1;
+    private readonly InputAction m_Gameplay_Attack2;
+    private readonly InputAction m_Gameplay_Attack3;
+    private readonly InputAction m_Gameplay_Attack4;
     private readonly InputAction m_Gameplay_BlockSkill;
+    private readonly InputAction m_Gameplay_Slip;
     public struct GameplayActions
     {
         private @CommonInputActions m_Wrapper;
@@ -979,7 +1111,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         public InputAction @Move => m_Wrapper.m_Gameplay_Move;
         public InputAction @Look => m_Wrapper.m_Gameplay_Look;
         public InputAction @Attack1 => m_Wrapper.m_Gameplay_Attack1;
+        public InputAction @Attack2 => m_Wrapper.m_Gameplay_Attack2;
+        public InputAction @Attack3 => m_Wrapper.m_Gameplay_Attack3;
+        public InputAction @Attack4 => m_Wrapper.m_Gameplay_Attack4;
         public InputAction @BlockSkill => m_Wrapper.m_Gameplay_BlockSkill;
+        public InputAction @Slip => m_Wrapper.m_Gameplay_Slip;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -998,9 +1134,21 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Attack1.started += instance.OnAttack1;
             @Attack1.performed += instance.OnAttack1;
             @Attack1.canceled += instance.OnAttack1;
+            @Attack2.started += instance.OnAttack2;
+            @Attack2.performed += instance.OnAttack2;
+            @Attack2.canceled += instance.OnAttack2;
+            @Attack3.started += instance.OnAttack3;
+            @Attack3.performed += instance.OnAttack3;
+            @Attack3.canceled += instance.OnAttack3;
+            @Attack4.started += instance.OnAttack4;
+            @Attack4.performed += instance.OnAttack4;
+            @Attack4.canceled += instance.OnAttack4;
             @BlockSkill.started += instance.OnBlockSkill;
             @BlockSkill.performed += instance.OnBlockSkill;
             @BlockSkill.canceled += instance.OnBlockSkill;
+            @Slip.started += instance.OnSlip;
+            @Slip.performed += instance.OnSlip;
+            @Slip.canceled += instance.OnSlip;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1014,9 +1162,21 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Attack1.started -= instance.OnAttack1;
             @Attack1.performed -= instance.OnAttack1;
             @Attack1.canceled -= instance.OnAttack1;
+            @Attack2.started -= instance.OnAttack2;
+            @Attack2.performed -= instance.OnAttack2;
+            @Attack2.canceled -= instance.OnAttack2;
+            @Attack3.started -= instance.OnAttack3;
+            @Attack3.performed -= instance.OnAttack3;
+            @Attack3.canceled -= instance.OnAttack3;
+            @Attack4.started -= instance.OnAttack4;
+            @Attack4.performed -= instance.OnAttack4;
+            @Attack4.canceled -= instance.OnAttack4;
             @BlockSkill.started -= instance.OnBlockSkill;
             @BlockSkill.performed -= instance.OnBlockSkill;
             @BlockSkill.canceled -= instance.OnBlockSkill;
+            @Slip.started -= instance.OnSlip;
+            @Slip.performed -= instance.OnSlip;
+            @Slip.canceled -= instance.OnSlip;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1202,7 +1362,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         void OnMove(InputAction.CallbackContext context);
         void OnLook(InputAction.CallbackContext context);
         void OnAttack1(InputAction.CallbackContext context);
+        void OnAttack2(InputAction.CallbackContext context);
+        void OnAttack3(InputAction.CallbackContext context);
+        void OnAttack4(InputAction.CallbackContext context);
         void OnBlockSkill(InputAction.CallbackContext context);
+        void OnSlip(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

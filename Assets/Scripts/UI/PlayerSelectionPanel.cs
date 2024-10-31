@@ -3,6 +3,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YogiGameCore.Utils.MonoExtent;
 
 public class PlayerSelectionPanel : MonoBehaviour
 {
@@ -52,6 +53,13 @@ public class PlayerSelectionPanel : MonoBehaviour
         nextBtn.onClick.AddListener(OnNext);
 
         currentIndex = PlayerPrefs.GetInt($"selectedCharacterP{playerIndex}", 1);
+    }
+    [Button]
+    public void Test(int index)
+    {
+        PlayerPrefs.SetInt($"selectedCharacterP{1}", index);
+        PlayerPrefs.SetInt($"selectedCharacterP{2}", index);
+
     }
 
     private void OnNext()

@@ -30,6 +30,8 @@ namespace YogiGameCore.FSM
             for (var i = 0; i < fsmState.Count; i++)
             {
                 var constructor = fsmState[i].GetConstructor(System.Type.EmptyTypes);
+                if (constructor == null)
+                    continue;
                 var baseData = (T2)constructor.Invoke(null);
                 _allFsmStates.Add(fsmState[i], baseData);
             }
