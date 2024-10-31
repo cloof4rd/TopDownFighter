@@ -100,6 +100,8 @@ public class RoleBasicState : YogiGameCore.FSM.FSMState
                 BulletConfig bulletConfig = bullets[i];
                 if (bulletConfig.spawnFrameIndex > animFrameIndex)
                     continue;
+                if (bulletConfig.prefab == null)
+                    continue;
                 Bullet bullet = GameObject.Instantiate(bulletConfig.prefab, this.role.transform);
                 var forward = this.role.getForward;
                 var right = Quaternion.Euler(0, 0, -90) * forward;

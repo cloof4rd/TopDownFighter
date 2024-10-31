@@ -17,11 +17,64 @@ MonoBehaviour:
   moveSpeed: 1
   animSpeedConfig:
     data:
-    - animName: Attack1
-      animSpeed: 1
-      bulletSpawnTime: 0.2
-      bulletName: Bullets/Spearman_Attack1
     - animName: Idle2
       animSpeed: 2
-      bulletSpawnTime: 0
-      bulletName: 
+      fxs: []
+      bullets: []
+    - animName: Attack1
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 5
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 0.5
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.3
+        sectorAngle: 0
+        damage: 30
+    - animName: Attack2
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 5
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 2
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.35
+        sectorAngle: 0
+        damage: 30
+    - animName: Attack3
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 9
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.3
+        sectorAngle: 0
+        damage: 30
+    - animName: Attack4
+      animSpeed: 1
+      fxs:
+      - spawnFrameIndex: 6
+        fxName: FX/Projectiles/Arrow
+        fxPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 0
+      bullets:
+      - spawnFrameIndex: 3
+        bulletName: Bullets/AttackBall
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 0
+        selectType: 0
+        radius: 0.2
+        sectorAngle: 0
+        damage: 5
