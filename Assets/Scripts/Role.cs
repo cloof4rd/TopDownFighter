@@ -53,7 +53,18 @@ public class Role : MonoBehaviour
     public bool isAttacking = false;
     public InputData inputData = new InputData();
 
-    public float hp = 100;
+    public float hp
+    {
+        get
+        {
+            return _hp;
+        }
+        set
+        {
+            _hp = value;
+        }
+    }
+    private float _hp = 100;
     public bool isBlockBullet, isMissBullet;
     public bool isDead = false;
 
@@ -157,7 +168,22 @@ public class Role : MonoBehaviour
             return;
         }
         PopupTextManager.PopupDamage(this.transform.position, damage.ToString());
+        if (hp < damage)
+            damage = hp;
         hp -= damage;
+        var ipnut = this.GetComponent<InputController>();
+        if (ipnut != null && HealthSystem.Instance != null)
+        {
+
+            if (ipnut.playerIndex == 0)
+            {
+                HealthSystem.Instance.TakeDamage(damage);
+            }
+            else
+            {
+                HealthSystem.Instance.UseMana(damage);
+            }
+        }
         if (hp <= 0)
         {
             hp = 0;
