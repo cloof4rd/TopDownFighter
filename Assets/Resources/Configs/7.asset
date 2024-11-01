@@ -34,6 +34,8 @@ MonoBehaviour:
         radius: 0.3
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack2
       animSpeed: 1
       fxs: []
@@ -47,6 +49,8 @@ MonoBehaviour:
         radius: 0.35
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack3
       animSpeed: 1
       fxs: []
@@ -60,21 +64,20 @@ MonoBehaviour:
         radius: 0.3
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack4
       animSpeed: 1
-      fxs:
-      - spawnFrameIndex: 6
-        fxName: FX/Projectiles/Arrow
-        fxPosition: {x: 0, y: 0}
-        lifeTime: 1
-        isDestroyWhenAnimOver: 0
+      fxs: []
       bullets:
-      - spawnFrameIndex: 3
-        bulletName: Bullets/AttackBall
+      - spawnFrameIndex: 11
+        bulletName: Bullets/Attack
         bulletPosition: {x: 0, y: 0}
-        lifeTime: 1
+        lifeTime: 0.1
         isDestroyWhenAnimOver: 0
         selectType: 0
-        radius: 0.2
+        radius: 0.31
         sectorAngle: 0
         damage: 5
+        isMove: 0
+        moveSpeed: 1
