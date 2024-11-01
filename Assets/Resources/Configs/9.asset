@@ -47,6 +47,15 @@ MonoBehaviour:
         radius: 0.35
         sectorAngle: 0
         damage: 30
+      - spawnFrameIndex: 7
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 2
+        isDestroyWhenAnimOver: 1
+        selectType: 1
+        radius: 0.35
+        sectorAngle: 257.9
+        damage: 30
     - animName: Attack3
       animSpeed: 1
       fxs: []
@@ -63,18 +72,27 @@ MonoBehaviour:
     - animName: Attack4
       animSpeed: 1
       fxs:
-      - spawnFrameIndex: 6
-        fxName: FX/Projectiles/Arrow
+      - spawnFrameIndex: 5
+        fxName: FX/Projectiles/LightArcSpellPrefab
         fxPosition: {x: 0, y: 0}
-        lifeTime: 1
+        lifeTime: 1.2
         isDestroyWhenAnimOver: 0
       bullets:
-      - spawnFrameIndex: 3
-        bulletName: Bullets/AttackBall
-        bulletPosition: {x: 0, y: 0}
-        lifeTime: 1
+      - spawnFrameIndex: 14
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.1}
+        lifeTime: 0.1
+        isDestroyWhenAnimOver: 0
+        selectType: 1
+        radius: 1.06
+        sectorAngle: 54.7
+        damage: 30
+      - spawnFrameIndex: 1
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.1}
+        lifeTime: 0.1
         isDestroyWhenAnimOver: 0
         selectType: 0
-        radius: 0.2
+        radius: 0.32
         sectorAngle: 0
-        damage: 5
+        damage: 30

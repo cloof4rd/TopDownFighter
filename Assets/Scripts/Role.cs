@@ -155,6 +155,7 @@ public class Role : MonoBehaviour
     {
         if (isDead)
             return;
+        
 
         // Block or Miss
         if (isBlockBullet)

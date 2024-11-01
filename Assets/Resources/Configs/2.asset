@@ -34,19 +34,23 @@ MonoBehaviour:
         radius: 0.3
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack2
       animSpeed: 1
       fxs: []
       bullets:
-      - spawnFrameIndex: 5
+      - spawnFrameIndex: 10
         bulletName: Bullets/Attack
         bulletPosition: {x: 0, y: 0}
-        lifeTime: 2
+        lifeTime: 0.1
         isDestroyWhenAnimOver: 1
         selectType: 0
         radius: 0.35
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack3
       animSpeed: 1
       fxs: []
@@ -60,17 +64,28 @@ MonoBehaviour:
         radius: 0.3
         sectorAngle: 0
         damage: 30
+        isMove: 0
+        moveSpeed: 1
     - animName: Attack4
       animSpeed: 1
       fxs:
       - spawnFrameIndex: 6
-        fxName: FX/Projectiles/Arrow
+        fxName: FX/Projectiles/BulletPrefab
         fxPosition: {x: 0, y: 0}
         lifeTime: 1
         isDestroyWhenAnimOver: 0
+        isMove: 1
+        moveSpeed: 1
+      - spawnFrameIndex: 8
+        fxName: FX/Projectiles/BulletPrefab
+        fxPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 0
+        isMove: 1
+        moveSpeed: 1
       bullets:
       - spawnFrameIndex: 3
-        bulletName: Bullets/AttackBall
+        bulletName: Bullets/Attack
         bulletPosition: {x: 0, y: 0}
         lifeTime: 1
         isDestroyWhenAnimOver: 0
@@ -78,3 +93,16 @@ MonoBehaviour:
         radius: 0.2
         sectorAngle: 0
         damage: 5
+        isMove: 1
+        moveSpeed: 1
+      - spawnFrameIndex: 5
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 0
+        selectType: 0
+        radius: 0.2
+        sectorAngle: 0
+        damage: 5
+        isMove: 1
+        moveSpeed: 1

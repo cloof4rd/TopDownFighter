@@ -46,7 +46,7 @@ public class FXConfig
     [System.NonSerialized, HideInInspector]
     public FX prefab;
 
-
+    [Range(-1, 14)]
     public int spawnFrameIndex;
     public string fxName;
     // the offset of the orientaion based on the role
@@ -54,13 +54,19 @@ public class FXConfig
     public Vector2 fxPosition;
     public float lifeTime = 1.0f;
     public bool isDestroyWhenAnimOver = true;
+    // Movement
+    public bool isMove = false;
+    public float moveSpeed = 1.0f;
+
 
     public void Init()
     {
-        if (this.fxName.IsNotNullAndEmpty() && this.prefab == null)
-        {
-            this.prefab = Resources.Load<FX>(this.fxName);
-        }
+        if (!fxName.IsNotNullAndEmpty() || prefab != null)
+            return;
+        this.prefab = Resources.Load<FX>(this.fxName);
+        if (prefab != null)
+            return;
+        Debug.LogError($"Error Load Path:{fxName} or Prefab Has not 'FX' script attached");
     }
 }
 [System.Serializable]
@@ -88,6 +94,11 @@ public class BulletConfig
 
     // Damage
     public float damage = 1;
+
+    // Movement
+    public bool isMove = false;
+    public float moveSpeed = 1.0f;
+
     public void Init()
     {
         hitLayerMask = ConstConfig.LayerMaskPlayer;

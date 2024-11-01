@@ -20,7 +20,7 @@ public class DebugRoleManager : MonoBehaviour
         {
             var row = new List<Role>();
             roles.Add(row);
-            for (int y = ConstConfig.RoleMinMaxIndex.x; y < ConstConfig.RoleMinMaxIndex.y; y++) // for role type count
+            for (int y = ConstConfig.RoleMinMaxIndex.x; y <= ConstConfig.RoleMinMaxIndex.y; y++) // for role type count
             {
                 row.Add(SpawnRole(new Vector2(x * gapX, y * gapY), y));
             }
@@ -47,7 +47,7 @@ public class DebugRoleManager : MonoBehaviour
             {
                 var frameLength = roles[3][0].frameCountPerSeconed;
                 var length = ConstConfig.ArtRoleSpriteColumnCount / frameLength;
-                yield return new WaitForSeconds(length+0.1f);
+                yield return new WaitForSeconds(length + 0.1f);
                 roles[3].ForEach(x => x.ReceiveDamage(0));
             }
         }
@@ -57,16 +57,16 @@ public class DebugRoleManager : MonoBehaviour
 
 
         SpawnDisplayName("Attack1", 4);
-        roles[4].ForEach(x => x.inputData.isAttack1 = true);
+        roles[4].ForEach(x => { x.inputData.isAttack1 = true; x.isMissBullet = true; });
 
         SpawnDisplayName("Attack2", 5);
-        roles[5].ForEach(x => x.inputData.isAttack2 = true);
+        roles[5].ForEach(x => { x.inputData.isAttack2 = true; x.isMissBullet = true; });
 
         SpawnDisplayName("Attack3", 6);
-        roles[6].ForEach(x => x.inputData.isAttack3 = true);
+        roles[6].ForEach(x => { x.inputData.isAttack3 = true; x.isMissBullet = true; });
 
         SpawnDisplayName("Attack4", 7);
-        roles[7].ForEach(x => x.inputData.isAttack4 = true);
+        roles[7].ForEach(x => { x.inputData.isAttack4 = true; x.isMissBullet = true; });
     }
     private void Update()
     {

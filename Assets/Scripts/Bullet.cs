@@ -29,6 +29,11 @@ public class Bullet : MonoBehaviour
         this.owner = owner;
         this.config = bulletConfig;
         lifeTimer = lifeTime;
+        if (config.isMove)
+        {
+            var move = this.gameObject.AddComponent<Move>();
+            move.speed = config.moveSpeed;
+        }
     }
     private void Update()
     {

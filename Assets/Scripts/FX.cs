@@ -17,9 +17,16 @@ public class FX : MonoBehaviour
     {
         this.config = fxConfig;
         lifeTimer = lifeTime;
+        if (config.isMove)
+        {
+            var move = this.gameObject.AddComponent<Move>();
+            move.speed = config.moveSpeed;
+        }
     }
     private void Update()
     {
+        if (this.config == null)
+            return;
         lifeTimer -= Time.deltaTime;
         if (lifeTimer > 0.0f)
             return;
