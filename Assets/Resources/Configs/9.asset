@@ -1,0 +1,98 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
+  m_Name: 9
+  m_EditorClassIdentifier: 
+  roleName: 9Broadsword
+  artPath: RoleArts/9Broadsword
+  moveSpeed: 1
+  animSpeedConfig:
+    data:
+    - animName: Idle2
+      animSpeed: 2
+      fxs: []
+      bullets: []
+    - animName: Attack1
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 5
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 0.5
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.3
+        sectorAngle: 0
+        damage: 30
+    - animName: Attack2
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 5
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 2
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.35
+        sectorAngle: 0
+        damage: 30
+      - spawnFrameIndex: 7
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 2
+        isDestroyWhenAnimOver: 1
+        selectType: 1
+        radius: 0.35
+        sectorAngle: 257.9
+        damage: 30
+    - animName: Attack3
+      animSpeed: 1
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 9
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.3
+        sectorAngle: 0
+        damage: 30
+    - animName: Attack4
+      animSpeed: 1
+      fxs:
+      - spawnFrameIndex: 5
+        fxName: FX/Projectiles/LightArcSpellPrefab
+        fxPosition: {x: 0, y: 0}
+        lifeTime: 1.2
+        isDestroyWhenAnimOver: 0
+      bullets:
+      - spawnFrameIndex: 14
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.1}
+        lifeTime: 0.1
+        isDestroyWhenAnimOver: 0
+        selectType: 1
+        radius: 1.06
+        sectorAngle: 54.7
+        damage: 30
+      - spawnFrameIndex: 1
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.1}
+        lifeTime: 0.1
+        isDestroyWhenAnimOver: 0
+        selectType: 0
+        radius: 0.32
+        sectorAngle: 0
+        damage: 30
