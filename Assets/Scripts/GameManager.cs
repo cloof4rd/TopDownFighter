@@ -1,31 +1,26 @@
-using Cinemachine;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public Vector2Int minMaxCharacterIndex = new Vector2Int(1, 9);
-    public CinemachineTargetGroup targetGroup;
-
-    public Role[] playerRoleArr;
-
-    public bool isDebugPlayer1;
-    public int debugPlayer1Index = 1;
+    public GameObject[] characters;  // Array of character prefabs for game use
+    public Transform player1SpawnPoint;  // Spawn point for Player 1
+    public Transform player2SpawnPoint;  // Spawn point for Player 2
 
     private void Start()
     {
-        if (isDebugPlayer1)
-        {
-            playerRoleArr[0].Init(debugPlayer1Index);
-        }
-        else
-        {
-            InitCharacterIndexByPlayerIndex(1);
-        }
-        InitCharacterIndexByPlayerIndex(2);
-    }
-    private void InitCharacterIndexByPlayerIndex(int playerIndex)
-    {
-        int selectedCharacterIndex = PlayerPrefs.GetInt($"selectedCharacterP{playerIndex}");
-        playerRoleArr[playerIndex - 1].Init(selectedCharacterIndex);
+        // Get the selected character indices from PlayerPrefs
+        int selectedCharacterP1 = PlayerPrefs.GetInt("selectedCharacterP1");
+        int selectedCharacterP2 = PlayerPrefs.GetInt("selectedCharacterP2");
+
+        // Instantiate Player 1's character at the designated spawn point
+        GameObject player1Character = Instantiate(characters[selectedCharacterP1], player1SpawnPoint.position, Quaternion.Euler(0, 0, 0));  // Face right
+        player1Character.name = "Player1Character";  // Optional: Rename the character for clarity
+        
+        player1Character.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
+        
+        // Instantiate Player 2's character at the designated spawn point
+        GameObject player2Character = Instantiate(characters[selectedCharacterP2], player2SpawnPoint.position, Quaternion.Euler(0, 180, 0));  // Face left
+        player2Character.name = "Player2Character";  // Optional: Rename the character for clarity
+        player2Character.transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
     }
 }
