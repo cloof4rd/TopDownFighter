@@ -36,6 +36,7 @@ MonoBehaviour:
         damage: 30
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack2
       animSpeed: 1
       fxs: []
@@ -51,6 +52,7 @@ MonoBehaviour:
         damage: 30
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack3
       animSpeed: 1
       fxs: []
@@ -66,6 +68,7 @@ MonoBehaviour:
         damage: 30
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack4
       animSpeed: 1
       fxs:
@@ -95,6 +98,7 @@ MonoBehaviour:
         damage: 5
         isMove: 1
         moveSpeed: 1
+        isPlaySwingSound: 0
       - spawnFrameIndex: 5
         bulletName: Bullets/Attack
         bulletPosition: {x: 0, y: 0}
@@ -106,3 +110,4 @@ MonoBehaviour:
         damage: 5
         isMove: 1
         moveSpeed: 1
+        isPlaySwingSound: 0

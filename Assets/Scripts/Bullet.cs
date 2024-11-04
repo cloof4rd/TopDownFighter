@@ -1,4 +1,3 @@
-using DTT.AreaOfEffectRegions;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,13 +5,13 @@ using YogiGameCore.Utils;
 
 public class Bullet : MonoBehaviour
 {
+
     [HideInInspector]
     public Role owner;
     [NonSerialized, HideInInspector]
     public BulletConfig config;
     private HashSet<Role> alreadyHit = new HashSet<Role>();
     private float lifeTimer;
-
     // Life
     public bool isDestroyWhenAnimOver => config.isDestroyWhenAnimOver;
     public float lifeTime => config.lifeTime;
@@ -33,6 +32,10 @@ public class Bullet : MonoBehaviour
         {
             var move = this.gameObject.AddComponent<Move>();
             move.speed = config.moveSpeed;
+        }
+        //if (config.isPlaySwingSound)
+        {
+            AudioBinding.Instance.PlaySwingSound(this.transform.position);
         }
     }
     private void Update()
@@ -87,11 +90,6 @@ public class Bullet : MonoBehaviour
                 target.ReceiveDamage(damage);
         }
     }
-
-    private void OnEnterArea(Collider2D obj)
-    {
-
-    }
     private void OnStayArea(Collider2D obj)
     {
         var target = obj.GetComponent<Role>();
@@ -100,9 +98,6 @@ public class Bullet : MonoBehaviour
         alreadyHit.Add(target);
         if (target != null && target != owner)
             target.ReceiveDamage(damage);
-    }
-    private void OnExitArea(Collider2D obj)
-    {
     }
     public void Kill()
     {

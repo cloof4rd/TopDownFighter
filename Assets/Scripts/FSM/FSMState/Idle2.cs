@@ -14,6 +14,7 @@ public class Idle2 : RoleBasicState
     {
         base.OnEnter();
         role.isBlockBullet = true;
+        role.OnTryBlock?.Invoke();
     }
 
     public override void OnUpdate()

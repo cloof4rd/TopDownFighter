@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using YogiGameCore.Utils.MonoExtent;
 
 public class DebugRoleManager : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class DebugRoleManager : MonoBehaviour
 
     public List<List<Role>> roles = new List<List<Role>>();
     public TextMeshPro textProPrefab;
+
+
     private void Awake()
     {
         int columnCount = 8;// idle idle2 run takeDamage  attack1 attack2 attack3 attack4
@@ -27,6 +30,36 @@ public class DebugRoleManager : MonoBehaviour
         }
         SetInputData();
     }
+    [Button]
+    public void HideAll()
+    {
+        foreach (var roleArr in roles)
+        {
+            foreach (var role in roleArr)
+            {
+                role.gameObject.SetActive(false);
+            }
+        }
+    }
+    [Button]
+    public void OnlyShow(int x, int y)
+    {
+        HideAll();
+        for (int i = 0; i < roles.Count; i++)
+        {
+            var row = roles[i];
+            for (int j = 0; j < row.Count; j++)
+            {
+                if(i == x&& j == y)
+                {
+                    row[j].gameObject.SetActive(true);
+                }
+            }
+        }
+
+    }
+
+
     private void SetInputData()
     {
         SpawnDisplayName("Idle", 0);

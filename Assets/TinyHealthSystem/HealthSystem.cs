@@ -1,15 +1,4 @@
-﻿//==============================================================
-// HealthSystem
-// HealthSystem.Instance.TakeDamage (float Damage);
-// HealthSystem.Instance.HealDamage (float Heal);
-// HealthSystem.Instance.UseMana (float Mana);
-// HealthSystem.Instance.RestoreMana (float Mana);
-// Attach to the Hero.
-//==============================================================
-
-using UnityEngine.SceneManagement;
-using System.Collections;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class HealthSystem : MonoBehaviour
@@ -116,7 +105,6 @@ public class HealthSystem : MonoBehaviour
 
 		UpdateGraphics();
 
-		StartCoroutine(PlayerHurts());
 	}
 
 	public void HealDamage(float Heal)
@@ -184,34 +172,5 @@ public class HealthSystem : MonoBehaviour
 		UpdateHealthGlobe();
 		UpdateManaBar();
 		UpdateManaGlobe();
-	}
-
-	//==============================================================
-	// Coroutine Player Hurts
-	//==============================================================
-	IEnumerator PlayerHurts()
-	{
-		// Player gets hurt. Do stuff.. play anim, sound..
-
-		PopupText.Instance.Popup("Ouch!", 1f, 1f); // Demo stuff!
-
-		if (hitPoint < 1) // Health is Zero!!
-		{
-			yield return StartCoroutine(PlayerDied()); // Hero is Dead
-		}
-
-		else
-			yield return null;
-	}
-
-	//==============================================================
-	// Hero is dead
-	//==============================================================
-	IEnumerator PlayerDied()
-	{
-		// Player is dead. Do stuff.. play anim, sound..
-		PopupText.Instance.Popup("You have died!", 1f, 1f); // Demo stuff!
-
-		yield return null;
 	}
 }

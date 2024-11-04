@@ -43,6 +43,7 @@ MonoBehaviour:
         damage: 30
         isMove: 1
         moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack2
       animSpeed: 1
       fxs:
@@ -65,6 +66,7 @@ MonoBehaviour:
         damage: 50
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack3
       animSpeed: 1
       fxs:
@@ -87,6 +89,7 @@ MonoBehaviour:
         damage: 10
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack4
       animSpeed: 1
       fxs:
@@ -109,3 +112,4 @@ MonoBehaviour:
         damage: 20
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0

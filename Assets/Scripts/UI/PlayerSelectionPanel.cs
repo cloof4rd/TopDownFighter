@@ -43,7 +43,7 @@ public class PlayerSelectionPanel : MonoBehaviour
     private void Update()
     {
         if (allPanel.All(panel => panel.isReady))
-            SceneManager.LoadScene(ConstConfig.BATTLE_SCENE_INDEX);
+            SceneManager.LoadScene(ConstConfig.MAP_SELECT_SCENE_INDEX);
     }
 
     public void Awake()

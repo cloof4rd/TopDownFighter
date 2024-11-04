@@ -7,6 +7,7 @@ public class PopupTextManager : MonoBehaviour
     public bool isPrintToConsole = false;
     public void Awake()
     {
+        dataDic = new Dictionary<string, DynamicTextData>();
         DynamicTextData[] allData = Resources.LoadAll<DynamicTextData>("PopupText");
         foreach (DynamicTextData data in allData)
         {

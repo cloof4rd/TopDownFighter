@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3679580102736400513
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4875362007613308155}
+  - component: {fileID: 8641763514244912773}
+  - component: {fileID: 6218899972291238021}
+  m_Layer: 0
+  m_Name: GlobalAudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4875362007613308155
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679580102736400513}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.8705807, y: -1.4796765, z: 0.06253323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8641763514244912773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679580102736400513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f33b956e79037e648a3eb557ea371498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mixer: {fileID: 24100000, guid: 8c09dbebed23df542ac1d5b78346f977, type: 2}
+  MixerBgmGroupName: BGM
+  MixerEffectGroupName: EFF
+  MixerMasterGroupName: Master
+  MasterVolumePropertyName: MASTER_Volume
+  BgmVolumePropertyName: BGM_Volume
+  EffectVolumePropertyName: EFF_Volume
+  MinMaxSoundValue: {x: -30, y: 20}
+  isPlayBGMOnStart: 1
+  bgmClip: {fileID: 8300000, guid: 7469d0bc0423c314883a261445db3c3a, type: 3}
+--- !u!114 &6218899972291238021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3679580102736400513}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e58808949af3141b4d102065fa6c59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitSoundAudioPath: Audio/Swing hit
+  HitBlockedAudioPath: Audio/Swing blocked
+  SwingAudioPath: Audio/Swing
+  BattleBGMSound: 0.25

@@ -99,6 +99,10 @@ public class BulletConfig
     public bool isMove = false;
     public float moveSpeed = 1.0f;
 
+    //Sound
+    [Obsolete]
+    public bool isPlaySwingSound = false;
+
     public void Init()
     {
         hitLayerMask = ConstConfig.LayerMaskPlayer;

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using YogiGameCore.Utils.MonoExtent;
 
@@ -53,6 +54,9 @@ public class Role : MonoBehaviour
     public bool isAttacking = false;
     public InputData inputData = new InputData();
 
+    public static Action<Role> OnPlayerBeHit, OnPlayerBlocked;
+    public Action OnBeHit, OnBlockSuccess, OnTryBlock, OnDie;
+
     public float hp
     {
         get
@@ -91,6 +95,8 @@ public class Role : MonoBehaviour
 
     private void Update()
     {
+        if (isDead)
+            return;
         if (inputData.isMoveing && !isAttacking)
         {
             UpdateDirectionByInput();
@@ -132,6 +138,7 @@ public class Role : MonoBehaviour
 
     private void UpdateMovement()
     {
+        
         Vector2 dir = inputData.moveDir;
         var moveOffset = (Vector3)dir.normalized * Time.deltaTime * config.moveSpeed;
         // Enviroment Block
@@ -150,17 +157,17 @@ public class Role : MonoBehaviour
         PopupTextManager.PopupMiss(this.transform.position, "Miss");
     }
 
-
     public void ReceiveDamage(float damage)
     {
         if (isDead)
             return;
-        
 
         // Block or Miss
         if (isBlockBullet)
         {
             PopupTextManager.PopupBlock(this.transform.position, "Block");
+            OnPlayerBlocked?.Invoke(this);
+            OnBlockSuccess?.Invoke();
             return;
         }
         if (isMissBullet)
@@ -168,6 +175,8 @@ public class Role : MonoBehaviour
             PopupTextManager.PopupMiss(this.transform.position, "Miss");
             return;
         }
+        OnPlayerBeHit?.Invoke(this);
+        OnBeHit?.Invoke();
         PopupTextManager.PopupDamage(this.transform.position, damage.ToString());
         if (hp < damage)
             damage = hp;
@@ -189,6 +198,7 @@ public class Role : MonoBehaviour
         {
             hp = 0;
             isDead = true;
+            OnDie?.Invoke();
         }
         animFSM.Change<TakeDamage>();
     }
