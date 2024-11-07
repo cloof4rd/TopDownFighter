@@ -22,7 +22,17 @@ public class RoleBasicState : YogiGameCore.FSM.FSMState
     public void InitAnimData(string animName)
     {
         if (animData == null)
-            animData = SpritesLoader.LoadSprites($"{role.config.artPath}/{animName}");
+        {
+            var path = $"{role.config.artPath}/{animName}";
+            try
+            {
+                animData = SpritesLoader.LoadSprites(path);
+            }
+            catch (System.Exception e)
+            {
+                Debug.LogError($"Load {path} Error:{e}");
+            }
+        }
     }
 
     public override void OnEnter()

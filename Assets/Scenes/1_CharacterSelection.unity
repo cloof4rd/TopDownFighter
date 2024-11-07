@@ -526,10 +526,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUIController2
       objectReference: {fileID: 0}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.data[0]
+      value: 
+      objectReference: {fileID: 2030275761}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.data[1]
+      value: 
+      objectReference: {fileID: 1058485071}
     - target: {fileID: 8706215728958009318, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
       propertyPath: m_UIInputModule
       value: 
-      objectReference: {fileID: 1058485071}
+      objectReference: {fileID: 0}
     - target: {fileID: 8706215728958009318, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Gamepad
@@ -1106,10 +1118,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerUIController1
       objectReference: {fileID: 0}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.data[0]
+      value: 
+      objectReference: {fileID: 2030275761}
+    - target: {fileID: 5773840252309438711, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
+      propertyPath: modules.Array.data[1]
+      value: 
+      objectReference: {fileID: 1058485071}
     - target: {fileID: 8706215728958009318, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
       propertyPath: m_UIInputModule
       value: 
-      objectReference: {fileID: 2030275761}
+      objectReference: {fileID: 0}
     - target: {fileID: 8706215728958009318, guid: beeaea7593e36c04c86c9f2a68243ea1, type: 3}
       propertyPath: m_DefaultControlScheme
       value: Gamepad

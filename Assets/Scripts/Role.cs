@@ -1,3 +1,4 @@
+using Cysharp.Threading.Tasks;
 using System;
 using UnityEngine;
 using YogiGameCore.Utils.MonoExtent;
@@ -6,6 +7,7 @@ public class Role : MonoBehaviour
 {
     public SpriteRenderer spriteRenderer;
 
+    public int playerIndex = -1;
     public int roleIndex = 0;
     public RoleConfig config;
 
@@ -86,12 +88,14 @@ public class Role : MonoBehaviour
         }
     }
 
-    public void Init(int index)
+    public async void Init(int index)
     {
         this.roleIndex = index;
         InitConfigByRoleIndex();
+        await UniTask.Yield();
         animFSM = new RoleFSMStateMachine(this);
     }
+
 
     private void Update()
     {
@@ -138,7 +142,7 @@ public class Role : MonoBehaviour
 
     private void UpdateMovement()
     {
-        
+
         Vector2 dir = inputData.moveDir;
         var moveOffset = (Vector3)dir.normalized * Time.deltaTime * config.moveSpeed;
         // Enviroment Block
@@ -182,10 +186,10 @@ public class Role : MonoBehaviour
             damage = hp;
         hp -= damage;
         var ipnut = this.GetComponent<InputController>();
-        if (ipnut != null && HealthSystem.Instance != null)
+        if (playerIndex != -1 && HealthSystem.Instance != null)
         {
 
-            if (ipnut.playerIndex == 0)
+            if (playerIndex == 0)
             {
                 HealthSystem.Instance.TakeDamage(damage);
             }
