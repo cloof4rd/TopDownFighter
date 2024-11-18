@@ -8,6 +8,7 @@
     public override void OnEnter()
     {
         base.OnEnter();
+        role.isCanMove = false;
     }
     public override void OnUpdate()
     {
@@ -27,5 +28,8 @@
     public override void OnExit()
     {
         base.OnExit();
+        role.isCanMove = true;
+
     }
+
 }

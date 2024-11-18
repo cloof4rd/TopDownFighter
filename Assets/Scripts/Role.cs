@@ -101,7 +101,7 @@ public class Role : MonoBehaviour
     {
         if (isDead)
             return;
-        if (inputData.isMoveing && !isAttacking)
+        if (inputData.isMoveing && !isAttacking && isCanMove)
         {
             UpdateDirectionByInput();
             UpdateMovement();

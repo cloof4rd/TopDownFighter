@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -11,6 +12,8 @@ public class PlayerSelectionPanel : MonoBehaviour
     public Button readyBtn;
     public Role role;
     public static List<PlayerSelectionPanel> allPanel = new List<PlayerSelectionPanel>();
+    public TextMeshProUGUI desc, roleName;
+    public RoleDescriptionConfig config;
     public int currentIndex
     {
         get
@@ -75,6 +78,9 @@ public class PlayerSelectionPanel : MonoBehaviour
     void UpdateByIndex()
     {
         role.Init(currentIndex);
+        var data = config.GetDeatilByIndex(currentIndex);
+        roleName.text = data.Name;
+        desc.text = data.Description;
     }
 
     void OnReady()

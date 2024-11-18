@@ -1,14 +1,13 @@
 using Cinemachine;
-using System;
 using UnityEngine;
-using UnityEngine.InputSystem;
+using YogiGameCore.Utils;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Vector2Int minMaxCharacterIndex = new Vector2Int(1, 9);
     public CinemachineTargetGroup targetGroup;
-    public SpriteRenderer mapRenderer;
+    public GameObject[] maps;
 
     public Role[] playerRoleArr;
 
@@ -17,6 +16,9 @@ public class GameManager : MonoBehaviour
 
     private bool isGamePlaying = true;
     private float gameTime;
+
+    public GameObject pausePanel;
+
     public float GetGameTime()
     {
         return gameTime;
@@ -26,7 +28,8 @@ public class GameManager : MonoBehaviour
     {
         Instance = this;
         var mapIndex = PlayerPrefs.GetInt(ConstConfig.MAP_SELECT_KEY, 1);
-        this.mapRenderer.sprite = Resources.Load<Sprite>($"{ConstConfig.MAP_RESOURCE_PATH}{mapIndex}");
+        maps[mapIndex - 1].SetActive(true);
+        //this.mapRenderer.sprite = Resources.Load<Sprite>($"{ConstConfig.MAP_RESOURCE_PATH}{mapIndex}");
     }
 
     private void Start()
@@ -51,14 +54,31 @@ public class GameManager : MonoBehaviour
         role.OnDie += GameOver;
     }
 
+    public void GamePauseToggle()
+    {
+        var controllers = GameObject.FindObjectsOfType<InputController>();
+        if (isGamePlaying)
+        {
+            Time.timeScale = 0;
+            isGamePlaying = false;
+            controllers.ForEach(x => x.isBlockInput = true);
+            pausePanel.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            isGamePlaying = true;
+            controllers.ForEach(x => x.isBlockInput = false);
+            pausePanel.SetActive(false);
+        }
+        //TODO:PopupGamePausePanel
+    }
     private void GameOver()
     {
         isGamePlaying = false;
+        var controllers = GameObject.FindObjectsOfType<InputController>();
+        controllers.ForEach(x => x.isBlockInput = true);
         BattleManager.Instance.FinishBattle();
-        //foreach (var role in playerRoleArr)
-        //{
-        //    role.GetComponent<PlayerInput>().SwitchCurrentActionMap("UI");
-        //}
     }
 
     private void FixedUpdate()
@@ -68,3 +88,4 @@ public class GameManager : MonoBehaviour
         gameTime += Time.fixedDeltaTime;
     }
 }
+

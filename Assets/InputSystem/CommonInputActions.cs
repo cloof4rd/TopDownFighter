@@ -98,6 +98,15 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""62fdd0bd-5623-49ba-9d2f-02e9770bb446"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -428,6 +437,17 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""Slip"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""22c547e8-961d-4786-8bbb-44a52ba696d0"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1023,6 +1043,7 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_Attack4 = m_Gameplay.FindAction("Attack4", throwIfNotFound: true);
         m_Gameplay_BlockSkill = m_Gameplay.FindAction("BlockSkill", throwIfNotFound: true);
         m_Gameplay_Slip = m_Gameplay.FindAction("Slip", throwIfNotFound: true);
+        m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1104,6 +1125,7 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_Attack4;
     private readonly InputAction m_Gameplay_BlockSkill;
     private readonly InputAction m_Gameplay_Slip;
+    private readonly InputAction m_Gameplay_Pause;
     public struct GameplayActions
     {
         private @CommonInputActions m_Wrapper;
@@ -1116,6 +1138,7 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         public InputAction @Attack4 => m_Wrapper.m_Gameplay_Attack4;
         public InputAction @BlockSkill => m_Wrapper.m_Gameplay_BlockSkill;
         public InputAction @Slip => m_Wrapper.m_Gameplay_Slip;
+        public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1149,6 +1172,9 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Slip.started += instance.OnSlip;
             @Slip.performed += instance.OnSlip;
             @Slip.canceled += instance.OnSlip;
+            @Pause.started += instance.OnPause;
+            @Pause.performed += instance.OnPause;
+            @Pause.canceled += instance.OnPause;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1177,6 +1203,9 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Slip.started -= instance.OnSlip;
             @Slip.performed -= instance.OnSlip;
             @Slip.canceled -= instance.OnSlip;
+            @Pause.started -= instance.OnPause;
+            @Pause.performed -= instance.OnPause;
+            @Pause.canceled -= instance.OnPause;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1367,6 +1396,7 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         void OnAttack4(InputAction.CallbackContext context);
         void OnBlockSkill(InputAction.CallbackContext context);
         void OnSlip(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
