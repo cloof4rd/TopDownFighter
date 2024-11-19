@@ -1,5 +1,4 @@
-﻿using log4net.Util;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace YogiGameCore.Utils
