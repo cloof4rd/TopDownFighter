@@ -372,7 +372,7 @@ MonoBehaviour:
   m_MaximumDistance: 5000
   m_MinimumFOV: 3
   m_MaximumFOV: 60
-  m_MinimumOrthoSize: 1
+  m_MinimumOrthoSize: 0.5
   m_MaximumOrthoSize: 5000
 --- !u!1 &42676557
 GameObject:
@@ -950,11 +950,11 @@ Transform:
   m_GameObject: {fileID: 304845877}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 1.7694029, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5344028, z: 0}
   m_LocalScale: {x: 1.8910663, y: 1.8910663, z: 1.8910663}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1264445139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
 --- !u!60 &304845879
 PolygonCollider2D:
@@ -2076,6 +2076,7 @@ GameObject:
   m_Component:
   - component: {fileID: 686329968}
   - component: {fileID: 686329969}
+  - component: {fileID: 686329970}
   m_Layer: 0
   m_Name: TargetGroup
   m_TagString: Untagged
@@ -2092,7 +2093,7 @@ Transform:
   m_GameObject: {fileID: 686329967}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.019540502, y: 0, z: 0}
+  m_LocalPosition: {x: -0.20203622, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2114,12 +2115,24 @@ MonoBehaviour:
   m_RotationMode: 0
   m_UpdateMethod: 2
   m_Targets:
-  - target: {fileID: 35300063}
-    weight: 1
-    radius: 0.01
   - target: {fileID: 1975598371}
     weight: 1
-    radius: 0.01
+    radius: 0.5
+  - target: {fileID: 35300063}
+    weight: 1
+    radius: 0.5
+--- !u!114 &686329970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686329967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9646cc3698a72a40b18e44d95c3e378, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &696928803
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2187,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 0.7822265
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2199,7 +2212,7 @@ Transform:
   m_GameObject: {fileID: 696928803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024500012, y: 0, z: -10.01}
+  m_LocalPosition: {x: -0.024500012, y: 0, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3044,7 +3057,7 @@ Transform:
   m_GameObject: {fileID: 1039403298}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.024500012, y: 0, z: -10.01}
+  m_LocalPosition: {x: -0.024500012, y: 0, z: -10.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3826,6 +3839,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Asset: {fileID: -944628639613478452, guid: 91e7ca9f805471e4380579ec2af09ca5, type: 3}
   m_ActionId: 96ca148d-9bdd-417a-bd8b-c3a916a569a9
+--- !u!1 &1264445138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1264445139}
+  m_Layer: 0
+  m_Name: DungeonCollision
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1264445139
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1264445138}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -1.765, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 304845878}
+  - {fileID: 1872399134}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272818055
 GameObject:
   m_ObjectHideFlags: 0
@@ -5708,11 +5754,11 @@ Transform:
   m_GameObject: {fileID: 1872399133}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.765, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.8910663, y: 1.8910663, z: 1.8910663}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1264445139}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!60 &1872399135
 PolygonCollider2D:
@@ -6582,8 +6628,7 @@ SceneRoots:
   - {fileID: 1381640}
   - {fileID: 634894463}
   - {fileID: 418955767}
-  - {fileID: 304845878}
-  - {fileID: 1872399134}
+  - {fileID: 1264445139}
   - {fileID: 1114353224}
   - {fileID: 42676558}
   - {fileID: 1030823155}

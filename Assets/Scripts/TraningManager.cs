@@ -15,8 +15,14 @@ public class TraningManager : MonoBehaviour
     public InputController controller;
 
     public List<Role> roles;
+
+    public Role Enemy;
+    public int EnemyIndex = 1;
     private void Start()
     {
+        Enemy.Init(EnemyIndex);
+        Enemy.hp = float.MaxValue / 2.0f;
+
         roles = new List<Role>();
         for (int i = ConstConfig.RoleMinMaxIndex.x; i <= ConstConfig.RoleMinMaxIndex.y; i++)
         {
