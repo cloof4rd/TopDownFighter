@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2a5a6911934f2404dbaf96657355a753, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -132,11 +132,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 7249922455884396009}
+  playerIndex: -1
   roleIndex: 0
   config: {fileID: 0}
   direction: 0
   frameCountPerSeconed: 15
   isCanMove: 1
+  isAttacking: 0
   inputData:
     moveDir: {x: 0, y: 0}
     isMoveing: 0
@@ -145,10 +147,12 @@ MonoBehaviour:
     isAttack3: 0
     isAttack4: 0
     isBlockSkill: 0
-  hp: 100
   isBlockBullet: 0
   isMissBullet: 0
   isDead: 0
+  commonMat: {fileID: 2100000, guid: 3f588be670f898949ba3192ed6651462, type: 2}
+  outlineMat: {fileID: 2100000, guid: 2a5a6911934f2404dbaf96657355a753, type: 2}
+  outlineColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &4908480811357671499
 Rigidbody2D:
   serializedVersion: 4

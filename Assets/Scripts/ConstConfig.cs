@@ -18,12 +18,13 @@ public class ConstConfig
     public const int MAP_SELECT_SCENE_INDEX = 2;
     public const int BATTLE_SCENE_INDEX = 3;
     public static int TRAINING_SCENE_INDEX = 4;
+    public static int EMPTY_SCENE_INDEX = 6;
 
     public static Vector2Int RoleMinMaxIndex = new Vector2Int(1, 9);
     public static int LayerMaskBlock = LayerMask.GetMask("Block");
     public static int LayerMaskPlayer = LayerMask.GetMask("Player");
 
-    public const float BattleBGMSound = .25f;
+    public const float BattleBGMSound = .4f;
     public const float CommonSound = .5f;
 
     // PlayerPrefs Key

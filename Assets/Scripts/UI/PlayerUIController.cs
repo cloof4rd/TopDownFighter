@@ -9,6 +9,7 @@ public class PlayerUIController : MonoBehaviour
     public Action<Vector2> onPlayerNavigate;
 
     public InputSystemUIInputModule[] modules;
+    public static Action OnCancelUITrigger;
 
     private void Awake()
     {
@@ -23,5 +24,10 @@ public class PlayerUIController : MonoBehaviour
     public void OnNavigate(InputValue v)
     {
         onPlayerNavigate?.Invoke(v.Get<Vector2>());
+    }
+
+    public void OnCancel()
+    {
+        OnCancelUITrigger?.Invoke();
     }
 }

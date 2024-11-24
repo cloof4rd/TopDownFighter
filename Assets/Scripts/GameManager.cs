@@ -19,7 +19,8 @@ public class GameManager : MonoBehaviour
     private bool isGamePlaying = true;
     private float gameTime;
 
-    public GameObject pausePanel;
+    public RoleDetailPanel detailPanel;
+    private RoleDescriptionConfig roleDescriptionConfig;
 
     public float GetGameTime()
     {
@@ -28,6 +29,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        roleDescriptionConfig = Resources.Load<RoleDescriptionConfig>("RoleDescriptionConfig");
         Instance = this;
         var mapIndex = PlayerPrefs.GetInt(ConstConfig.MAP_SELECT_KEY, 1);
         maps[mapIndex - 1].SetActive(true);
@@ -45,35 +47,23 @@ public class GameManager : MonoBehaviour
             InitCharacterIndexByPlayerIndex(1);
         }
         InitCharacterIndexByPlayerIndex(2);
+        InputController.onPause += () => GameManager.Instance.GamePauseToggle();
+
     }
 
     private void InitCharacterIndexByPlayerIndex(int playerIndex)
     {
         int selectedCharacterIndex = PlayerPrefs.GetInt($"selectedCharacterP{playerIndex}");
-        var role = playerRoleArr[playerIndex - 1];
+        Role role = playerRoleArr[playerIndex - 1];
         role.Init(selectedCharacterIndex);
         BattleManager.Instance.InitRoleBattleInfo(role, playerIndex);
         role.OnDie += () => GameOver().Forget();
+        var data = roleDescriptionConfig.GetDeatilByIndex(selectedCharacterIndex);
+        detailPanel.SetDisplay(playerIndex, data.Name);
     }
-
     public void GamePauseToggle()
     {
-        var controllers = GameObject.FindObjectsOfType<InputController>();
-        if (isGamePlaying)
-        {
-            Time.timeScale = 0;
-            isGamePlaying = false;
-            controllers.ForEach(x => x.isBlockInput = true);
-            pausePanel.SetActive(true);
-        }
-        else
-        {
-            Time.timeScale = 1;
-            isGamePlaying = true;
-            controllers.ForEach(x => x.isBlockInput = false);
-            pausePanel.SetActive(false);
-        }
-        //TODO:PopupGamePausePanel
+        isGamePlaying = !isGamePlaying;
     }
     private async UniTaskVoid GameOver()
     {
@@ -90,7 +80,7 @@ public class GameManager : MonoBehaviour
             x.SwitchToUIInput();
         });
         var roles = GameObject.FindObjectsOfType<Role>();
-        roles.ForEach(x=>x.inputData.Clear());
+        roles.ForEach(x => x.inputData.Clear());
 
 
         BattleManager.Instance.FinishBattle();

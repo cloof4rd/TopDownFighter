@@ -37,8 +37,8 @@ public class BattleSettlementPanel : MonoBehaviour
             player2BattleInfoView.Ready();
             CheckAllPlayerReady().Forget();
         };
-        inputController1.onCancel += EnterRoleSelectScene;
-        inputController2.onCancel += EnterRoleSelectScene;
+        inputController1.onCancel += PausePanel.Instance.EnterRoleSelectScene;
+        inputController2.onCancel += PausePanel.Instance.EnterRoleSelectScene;
     }
 
     private void Popup(List<BattleInfo> battleInfos)
@@ -57,15 +57,7 @@ public class BattleSettlementPanel : MonoBehaviour
     {
         await UniTask.WaitForSeconds(player1BattleInfoView.readyAnimTime + 0.1f);
         if (player1BattleInfoView.isReady && player2BattleInfoView.isReady)
-            RestartBattle();
+            PausePanel.Instance.RestartBattle();
     }
 
-    void RestartBattle()
-    {
-        SceneManager.LoadScene(ConstConfig.BATTLE_SCENE_INDEX);
-    }
-    void EnterRoleSelectScene()
-    {
-        SceneManager.LoadScene(ConstConfig.ROLE_SELECTION_SCENE_INDEX);
-    }
 }

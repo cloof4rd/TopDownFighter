@@ -74,6 +74,16 @@ public class Role : MonoBehaviour
     public bool isBlockBullet, isMissBullet;
     public bool isDead = false;
 
+    public Material commonMat, outlineMat;
+    public Color outlineColor;
+    [Button]
+    public void SetOutline(bool isOutline)
+    {
+        var render = this.GetComponentInChildren<Renderer>();
+        render.material = isOutline ? outlineMat : commonMat;
+        render.material.SetColor("_lineColor", outlineColor);
+    }
+
     private void InitConfigByRoleIndex()
     {
         config = Resources.Load<RoleConfig>($"Configs/{roleIndex}");
@@ -95,7 +105,6 @@ public class Role : MonoBehaviour
         await UniTask.Yield();
         animFSM = new RoleFSMStateMachine(this);
     }
-
 
     private void Update()
     {

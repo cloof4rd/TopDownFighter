@@ -107,6 +107,51 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayDieAnim"",
+                    ""type"": ""Button"",
+                    ""id"": ""0b6b5f2a-208e-46cb-bbc9-593032045a60"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""PlayTakeDamageAnim"",
+                    ""type"": ""Button"",
+                    ""id"": ""20c216d7-ee1f-40ae-a8d4-bfa3af77f54d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchNextRole"",
+                    ""type"": ""Button"",
+                    ""id"": ""4b1e39fa-5950-4c10-be15-d799307a2bb1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SwitchPrevRole"",
+                    ""type"": ""Button"",
+                    ""id"": ""27a16efd-b8be-47ad-bbcc-55a5d3435ebd"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""LockSkill"",
+                    ""type"": ""Value"",
+                    ""id"": ""5040c439-f2a3-4875-94da-d425d414fb3f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -450,6 +495,204 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""734c417b-9ec4-4052-a84e-da2d453e1690"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayDieAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""36210b85-ffce-4d7e-a048-24137582a189"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayDieAnim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""610daade-3a80-43f3-826d-c9ca75b25d04"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayDieAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""3b42ad00-9fb0-4761-8f87-600c913aea4d"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayDieAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""97f2b7cc-43b9-4c68-bd10-fe20af3a7514"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayTakeDamageAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""587ac5f0-1407-4672-9c4b-0f6aa41f1bb5"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayTakeDamageAnim"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""b48c8498-1fd3-451a-bdad-185ed783c9e7"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayTakeDamageAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""002715d4-5fee-4f1d-95b7-a281aed767f6"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""PlayTakeDamageAnim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bbfcf81d-44e0-430d-93c1-e0a3341ad4e5"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchNextRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""bdf17a8e-29bc-49ad-9a77-409fb70a9bae"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchNextRole"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""8b0846d9-4137-46b8-8e23-7b070e7871ec"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchNextRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""10aeb788-68ec-4828-9d6a-fadcbe20323c"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchNextRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""08216e82-6e55-4745-ab60-349072feec7c"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchPrevRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""One Modifier"",
+                    ""id"": ""bcd79786-2fcd-46db-a53a-bcb29b91be1d"",
+                    ""path"": ""OneModifier"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchPrevRole"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""modifier"",
+                    ""id"": ""67e3a8cd-25d2-45d2-800d-68137626a08a"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchPrevRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""binding"",
+                    ""id"": ""4e254bb3-2371-4858-b898-c4b4161a3e94"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SwitchPrevRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6c1390ac-8286-49f0-8aa1-153ca7b5b60e"",
+                    ""path"": """",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7b06be9c-a47d-482f-94e2-f81138190350"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""LockSkill"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -543,6 +786,33 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""96ca148d-9bdd-417a-bd8b-c3a916a569a9"",
                     ""expectedControlType"": ""Quaternion"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RestartGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""a89dbe73-10ef-4dc9-b575-83fbcb18681c"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""ExitGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""97670aa6-50b6-4b7b-afb4-ec51284ed59d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Continue"",
+                    ""type"": ""Button"",
+                    ""id"": ""f7660251-43d9-4d4b-bb31-2257609f8611"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
@@ -966,6 +1236,39 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""action"": ""TrackedDeviceOrientation"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d9402c48-5889-4cb4-8155-cbf4e8bf9711"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RestartGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ca835ef1-0f29-4e86-bfba-32a2cfa1af06"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ExitGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6bcd1051-abcf-4b9b-a87b-1dfcbd94c8fe"",
+                    ""path"": ""<Gamepad>/start"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Continue"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -1044,6 +1347,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_BlockSkill = m_Gameplay.FindAction("BlockSkill", throwIfNotFound: true);
         m_Gameplay_Slip = m_Gameplay.FindAction("Slip", throwIfNotFound: true);
         m_Gameplay_Pause = m_Gameplay.FindAction("Pause", throwIfNotFound: true);
+        m_Gameplay_PlayDieAnim = m_Gameplay.FindAction("PlayDieAnim", throwIfNotFound: true);
+        m_Gameplay_PlayTakeDamageAnim = m_Gameplay.FindAction("PlayTakeDamageAnim", throwIfNotFound: true);
+        m_Gameplay_SwitchNextRole = m_Gameplay.FindAction("SwitchNextRole", throwIfNotFound: true);
+        m_Gameplay_SwitchPrevRole = m_Gameplay.FindAction("SwitchPrevRole", throwIfNotFound: true);
+        m_Gameplay_LockSkill = m_Gameplay.FindAction("LockSkill", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1056,6 +1364,9 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         m_UI_RightClick = m_UI.FindAction("RightClick", throwIfNotFound: true);
         m_UI_TrackedDevicePosition = m_UI.FindAction("TrackedDevicePosition", throwIfNotFound: true);
         m_UI_TrackedDeviceOrientation = m_UI.FindAction("TrackedDeviceOrientation", throwIfNotFound: true);
+        m_UI_RestartGame = m_UI.FindAction("RestartGame", throwIfNotFound: true);
+        m_UI_ExitGame = m_UI.FindAction("ExitGame", throwIfNotFound: true);
+        m_UI_Continue = m_UI.FindAction("Continue", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -1126,6 +1437,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_BlockSkill;
     private readonly InputAction m_Gameplay_Slip;
     private readonly InputAction m_Gameplay_Pause;
+    private readonly InputAction m_Gameplay_PlayDieAnim;
+    private readonly InputAction m_Gameplay_PlayTakeDamageAnim;
+    private readonly InputAction m_Gameplay_SwitchNextRole;
+    private readonly InputAction m_Gameplay_SwitchPrevRole;
+    private readonly InputAction m_Gameplay_LockSkill;
     public struct GameplayActions
     {
         private @CommonInputActions m_Wrapper;
@@ -1139,6 +1455,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         public InputAction @BlockSkill => m_Wrapper.m_Gameplay_BlockSkill;
         public InputAction @Slip => m_Wrapper.m_Gameplay_Slip;
         public InputAction @Pause => m_Wrapper.m_Gameplay_Pause;
+        public InputAction @PlayDieAnim => m_Wrapper.m_Gameplay_PlayDieAnim;
+        public InputAction @PlayTakeDamageAnim => m_Wrapper.m_Gameplay_PlayTakeDamageAnim;
+        public InputAction @SwitchNextRole => m_Wrapper.m_Gameplay_SwitchNextRole;
+        public InputAction @SwitchPrevRole => m_Wrapper.m_Gameplay_SwitchPrevRole;
+        public InputAction @LockSkill => m_Wrapper.m_Gameplay_LockSkill;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1175,6 +1496,21 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Pause.started += instance.OnPause;
             @Pause.performed += instance.OnPause;
             @Pause.canceled += instance.OnPause;
+            @PlayDieAnim.started += instance.OnPlayDieAnim;
+            @PlayDieAnim.performed += instance.OnPlayDieAnim;
+            @PlayDieAnim.canceled += instance.OnPlayDieAnim;
+            @PlayTakeDamageAnim.started += instance.OnPlayTakeDamageAnim;
+            @PlayTakeDamageAnim.performed += instance.OnPlayTakeDamageAnim;
+            @PlayTakeDamageAnim.canceled += instance.OnPlayTakeDamageAnim;
+            @SwitchNextRole.started += instance.OnSwitchNextRole;
+            @SwitchNextRole.performed += instance.OnSwitchNextRole;
+            @SwitchNextRole.canceled += instance.OnSwitchNextRole;
+            @SwitchPrevRole.started += instance.OnSwitchPrevRole;
+            @SwitchPrevRole.performed += instance.OnSwitchPrevRole;
+            @SwitchPrevRole.canceled += instance.OnSwitchPrevRole;
+            @LockSkill.started += instance.OnLockSkill;
+            @LockSkill.performed += instance.OnLockSkill;
+            @LockSkill.canceled += instance.OnLockSkill;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1206,6 +1542,21 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @Pause.started -= instance.OnPause;
             @Pause.performed -= instance.OnPause;
             @Pause.canceled -= instance.OnPause;
+            @PlayDieAnim.started -= instance.OnPlayDieAnim;
+            @PlayDieAnim.performed -= instance.OnPlayDieAnim;
+            @PlayDieAnim.canceled -= instance.OnPlayDieAnim;
+            @PlayTakeDamageAnim.started -= instance.OnPlayTakeDamageAnim;
+            @PlayTakeDamageAnim.performed -= instance.OnPlayTakeDamageAnim;
+            @PlayTakeDamageAnim.canceled -= instance.OnPlayTakeDamageAnim;
+            @SwitchNextRole.started -= instance.OnSwitchNextRole;
+            @SwitchNextRole.performed -= instance.OnSwitchNextRole;
+            @SwitchNextRole.canceled -= instance.OnSwitchNextRole;
+            @SwitchPrevRole.started -= instance.OnSwitchPrevRole;
+            @SwitchPrevRole.performed -= instance.OnSwitchPrevRole;
+            @SwitchPrevRole.canceled -= instance.OnSwitchPrevRole;
+            @LockSkill.started -= instance.OnLockSkill;
+            @LockSkill.performed -= instance.OnLockSkill;
+            @LockSkill.canceled -= instance.OnLockSkill;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1237,6 +1588,9 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_RightClick;
     private readonly InputAction m_UI_TrackedDevicePosition;
     private readonly InputAction m_UI_TrackedDeviceOrientation;
+    private readonly InputAction m_UI_RestartGame;
+    private readonly InputAction m_UI_ExitGame;
+    private readonly InputAction m_UI_Continue;
     public struct UIActions
     {
         private @CommonInputActions m_Wrapper;
@@ -1251,6 +1605,9 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         public InputAction @RightClick => m_Wrapper.m_UI_RightClick;
         public InputAction @TrackedDevicePosition => m_Wrapper.m_UI_TrackedDevicePosition;
         public InputAction @TrackedDeviceOrientation => m_Wrapper.m_UI_TrackedDeviceOrientation;
+        public InputAction @RestartGame => m_Wrapper.m_UI_RestartGame;
+        public InputAction @ExitGame => m_Wrapper.m_UI_ExitGame;
+        public InputAction @Continue => m_Wrapper.m_UI_Continue;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1290,6 +1647,15 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed += instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled += instance.OnTrackedDeviceOrientation;
+            @RestartGame.started += instance.OnRestartGame;
+            @RestartGame.performed += instance.OnRestartGame;
+            @RestartGame.canceled += instance.OnRestartGame;
+            @ExitGame.started += instance.OnExitGame;
+            @ExitGame.performed += instance.OnExitGame;
+            @ExitGame.canceled += instance.OnExitGame;
+            @Continue.started += instance.OnContinue;
+            @Continue.performed += instance.OnContinue;
+            @Continue.canceled += instance.OnContinue;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -1324,6 +1690,15 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @TrackedDeviceOrientation.started -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.performed -= instance.OnTrackedDeviceOrientation;
             @TrackedDeviceOrientation.canceled -= instance.OnTrackedDeviceOrientation;
+            @RestartGame.started -= instance.OnRestartGame;
+            @RestartGame.performed -= instance.OnRestartGame;
+            @RestartGame.canceled -= instance.OnRestartGame;
+            @ExitGame.started -= instance.OnExitGame;
+            @ExitGame.performed -= instance.OnExitGame;
+            @ExitGame.canceled -= instance.OnExitGame;
+            @Continue.started -= instance.OnContinue;
+            @Continue.performed -= instance.OnContinue;
+            @Continue.canceled -= instance.OnContinue;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -1397,6 +1772,11 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         void OnBlockSkill(InputAction.CallbackContext context);
         void OnSlip(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnPlayDieAnim(InputAction.CallbackContext context);
+        void OnPlayTakeDamageAnim(InputAction.CallbackContext context);
+        void OnSwitchNextRole(InputAction.CallbackContext context);
+        void OnSwitchPrevRole(InputAction.CallbackContext context);
+        void OnLockSkill(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
@@ -1410,5 +1790,8 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         void OnRightClick(InputAction.CallbackContext context);
         void OnTrackedDevicePosition(InputAction.CallbackContext context);
         void OnTrackedDeviceOrientation(InputAction.CallbackContext context);
+        void OnRestartGame(InputAction.CallbackContext context);
+        void OnExitGame(InputAction.CallbackContext context);
+        void OnContinue(InputAction.CallbackContext context);
     }
 }

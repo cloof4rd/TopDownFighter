@@ -11,7 +11,14 @@ public class InputController : MonoBehaviour
     public Role currentControlRole;
     public bool isBlockInput = false;
     public Action onSubmit, onCancel;
-    
+    public static Action onRestartGame, onExitGame, onContinueGame, onPause;
+
+    public static Action onPlayDieAnim, onPlayTakeDamageAnim, onSwitchNextRole, onSwitchPrevRole;
+
+    public void SwitchToCommonInput()
+    {
+        input.SwitchCurrentActionMap("Gameplay");
+    }
     public void SwitchToUIInput()
     {
         input.SwitchCurrentActionMap("UI");
@@ -76,11 +83,16 @@ public class InputController : MonoBehaviour
         await Task.Yield();
         currentControlRole.inputData.isBlockSkill = false;
     }
+
+    public void OnLockSkill(InputValue v)
+    {
+        print(v.Get<float>());
+        isBlockInput = v.Get<float>() > 0;
+    }
     public void OnPause()
     {
-        GameManager.Instance.GamePauseToggle();
+        onPause?.Invoke();
     }
-
     private void OnSubmit()
     {
         onSubmit?.Invoke();
@@ -91,4 +103,37 @@ public class InputController : MonoBehaviour
         onCancel?.Invoke();
         print("OnCancel");
     }
+
+    private void OnRestartGame()
+    {
+        onRestartGame?.Invoke();
+    }
+    private void OnExitGame()
+    {
+        onExitGame?.Invoke();
+    }
+    private void OnContinue()
+    {
+        onContinueGame?.Invoke();
+    }
+
+
+
+    private void OnSwitchPrevRole()
+    {
+        onSwitchPrevRole?.Invoke();
+    }
+    private void OnSwitchNextRole()
+    {
+        onSwitchNextRole?.Invoke();
+    }
+    private void OnPlayDieAnim()
+    {
+        onPlayDieAnim?.Invoke();
+    }
+    private void OnPlayTakeDamageAnim()
+    {
+        onPlayTakeDamageAnim?.Invoke();
+    }
+
 }

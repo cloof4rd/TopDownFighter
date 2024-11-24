@@ -1,8 +1,8 @@
 using Cinemachine;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using YogiGameCore.Utils.MonoExtent;
 
 public class TraningManager : MonoBehaviour
 {
@@ -18,6 +18,9 @@ public class TraningManager : MonoBehaviour
 
     public Role Enemy;
     public int EnemyIndex = 1;
+
+    private int CurrentDisplayIndex;
+
     private void Start()
     {
         Enemy.Init(EnemyIndex);
@@ -40,37 +43,29 @@ public class TraningManager : MonoBehaviour
         }
 
         int selectedCharacterIndex = PlayerPrefs.GetInt($"selectedCharacterP0");
-        var saveIndex = (selectedCharacterIndex - 1);
-        switchRoleToggleArr[saveIndex].isOn = true;
-        OnlyShowTarget(saveIndex);
+        OnlyShowTarget(selectedCharacterIndex - 1);
 
 
         dieBtn.onClick.AddListener(() =>
         {
-            foreach (var role in roles)
-            {
-                if (role.gameObject.activeInHierarchy)
-                    role.ReceiveDamage(100);
-            }
+            TakeDamage();
         });
 
         takeDamageBtn.onClick.AddListener(() =>
         {
-            foreach (var role in roles)
-            {
-                if (role.gameObject.activeInHierarchy)
-                    role.ReceiveDamage(0);
-            }
+            Die();
         });
 
-        backToMenuBtn.onClick.AddListener(() =>
-        {
-            SceneManager.LoadScene(ConstConfig.MENU_SCENE_INDEX);
-        });
+        InputController.onPlayDieAnim += Die;
+        InputController.onPlayTakeDamageAnim += TakeDamage;
+        InputController.onSwitchNextRole += ShowNextRole;
+        InputController.onSwitchPrevRole += ShowPrevRole;
     }
 
     private void OnlyShowTarget(int tmpI)
     {
+        CurrentDisplayIndex = tmpI;
+        switchRoleToggleArr[CurrentDisplayIndex].isOn = true;
         foreach (var otherRole in roles)
         {
             otherRole.gameObject.SetActive(false);
@@ -88,6 +83,38 @@ public class TraningManager : MonoBehaviour
         role.Init(selectedCharacterIndex);
         role.gameObject.SetActive(false);
         return role;
+    }
+
+    [Button]
+    public void ShowNextRole()
+    {
+        var newIndex = CurrentDisplayIndex + 1;
+        newIndex %= switchRoleToggleArr.Length;
+        OnlyShowTarget(newIndex);
+    }
+    [Button]
+    public void ShowPrevRole()
+    {
+        var newIndex = CurrentDisplayIndex - 1;
+        if (newIndex < 0)
+            newIndex = switchRoleToggleArr.Length - 1;
+        OnlyShowTarget(newIndex);
+    }
+    private void Die()
+    {
+        foreach (var role in roles)
+        {
+            if (role.gameObject.activeInHierarchy)
+                role.ReceiveDamage(100);
+        }
+    }
+    private void TakeDamage()
+    {
+        foreach (var role in roles)
+        {
+            if (role.gameObject.activeInHierarchy)
+                role.ReceiveDamage(0);
+        }
     }
 
 }

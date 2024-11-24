@@ -962,6 +962,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7875892403172339847}
     m_Modifications:
+    - target: {fileID: 1608173283285315968, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4736329763578153211, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1005,6 +1009,14 @@ PrefabInstance:
     - target: {fileID: 5092540593809991392, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: m_Name
       value: CommonRole
+      objectReference: {fileID: 0}
+    - target: {fileID: 5160701564045982552, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8037304277213198433, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9039001264194946744, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: m_SortingLayer
