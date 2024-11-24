@@ -14,12 +14,11 @@ public class CamGroupController : MonoBehaviour
     }
 
     [Button]
-    public async UniTaskVoid OnlyShowSingle(int index, float animTime)
+    public async UniTask OnlyShowSingle(int index, float animTime)
     {
-
         while (animTime > 0)
         {
-            animTime -= Time.deltaTime;
+            animTime -= Time.fixedDeltaTime;
 
             for (int i = 0; i < group.m_Targets.Length; i++)
             {
@@ -29,7 +28,7 @@ public class CamGroupController : MonoBehaviour
                 target.weight -= Time.deltaTime;
                 group.m_Targets[i] = target;
             }
-            await UniTask.Yield();
+            await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
         }
     }
 }

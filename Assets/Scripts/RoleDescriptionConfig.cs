@@ -17,4 +17,6 @@ public class RoleDetail
     public int Index;
     public string Name;
     public string Description;
+    public Sprite headIcon;
+    public Sprite ClassIcon;
 }

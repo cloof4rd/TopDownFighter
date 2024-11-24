@@ -1,5 +1,5 @@
+using System;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,6 +10,12 @@ public class InputController : MonoBehaviour
     public Role[] roles;
     public Role currentControlRole;
     public bool isBlockInput = false;
+    public Action onSubmit, onCancel;
+    
+    public void SwitchToUIInput()
+    {
+        input.SwitchCurrentActionMap("UI");
+    }
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
@@ -17,13 +23,11 @@ public class InputController : MonoBehaviour
         if (roles.Length > playerIndex)
             SwitchRole(roles[playerIndex]);
     }
-
     public void SwitchRole(Role role)
     {
         currentControlRole = role;
         role.playerIndex = playerIndex;
     }
-
     public void OnMove(InputValue v)
     {
         if (isBlockInput)
@@ -64,7 +68,6 @@ public class InputController : MonoBehaviour
         await Task.Yield();
         currentControlRole.inputData.isAttack4 = false;
     }
-
     public async void OnBlockSkill()
     {
         if (isBlockInput)
@@ -73,9 +76,19 @@ public class InputController : MonoBehaviour
         await Task.Yield();
         currentControlRole.inputData.isBlockSkill = false;
     }
-
     public void OnPause()
     {
         GameManager.Instance.GamePauseToggle();
+    }
+
+    private void OnSubmit()
+    {
+        onSubmit?.Invoke();
+        print("OnSubmit");
+    }
+    private void OnCancel()
+    {
+        onCancel?.Invoke();
+        print("OnCancel");
     }
 }

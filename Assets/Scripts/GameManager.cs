@@ -1,4 +1,5 @@
 using Cinemachine;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 using YogiGameCore.Utils;
 
@@ -7,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     public Vector2Int minMaxCharacterIndex = new Vector2Int(1, 9);
     public CinemachineTargetGroup targetGroup;
+    public CamGroupController camGroupController;
     public GameObject[] maps;
 
     public Role[] playerRoleArr;
@@ -51,7 +53,7 @@ public class GameManager : MonoBehaviour
         var role = playerRoleArr[playerIndex - 1];
         role.Init(selectedCharacterIndex);
         BattleManager.Instance.InitRoleBattleInfo(role, playerIndex);
-        role.OnDie += GameOver;
+        role.OnDie += () => GameOver().Forget();
     }
 
     public void GamePauseToggle()
@@ -73,11 +75,24 @@ public class GameManager : MonoBehaviour
         }
         //TODO:PopupGamePausePanel
     }
-    private void GameOver()
+    private async UniTaskVoid GameOver()
     {
         isGamePlaying = false;
+        bool isPlayer1Win = BattleManager.Instance.infoArr[0].isWinner;
+
+        await camGroupController
+            .OnlyShowSingle(isPlayer1Win ? 0 : 1, 1.0f);
+
         var controllers = GameObject.FindObjectsOfType<InputController>();
-        controllers.ForEach(x => x.isBlockInput = true);
+        controllers.ForEach(x =>
+        {
+            x.isBlockInput = true;
+            x.SwitchToUIInput();
+        });
+        var roles = GameObject.FindObjectsOfType<Role>();
+        roles.ForEach(x=>x.inputData.Clear());
+
+
         BattleManager.Instance.FinishBattle();
     }
 
