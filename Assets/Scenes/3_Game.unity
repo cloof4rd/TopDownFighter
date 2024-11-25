@@ -242,6 +242,10 @@ PrefabInstance:
       propertyPath: m_fontColor32.rgba
       value: 4294938368
       objectReference: {fileID: 0}
+    - target: {fileID: 1608173283285315968, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: direction
       value: 4
@@ -252,11 +256,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: outlineColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: outlineColor.g
-      value: 0.56078434
+      value: 0.11764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
+      propertyPath: outlineColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4736329763578153211, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -322,10 +330,6 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -518412198, guid: 4e536218bc126b34c95d507bb91b429a, type: 3}
-    - target: {fileID: 9039001264194946744, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d71d2c4ea496c6640be2fdaa8c9e9abb, type: 2}
     m_RemovedComponents:
     - {fileID: -8028366343016941335, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
     - {fileID: 2643537867466804537, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
@@ -4051,7 +4055,6 @@ MonoBehaviour:
   - {fileID: 1951012516}
   isDebugPlayer1: 0
   debugPlayer1Index: 3
-  pausePanel: {fileID: 8453316304400397209}
   detailPanel: {fileID: 1571901821}
 --- !u!114 &1444428102
 MonoBehaviour:
@@ -5796,7 +5799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: outlineColor.g
-      value: 0.5764706
+      value: 0.11818832
       objectReference: {fileID: 0}
     - target: {fileID: 2810989370281279806, guid: 2d971d3670ef9424181177f9d669fb3b, type: 3}
       propertyPath: outlineColor.r
@@ -6503,17 +6506,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3e76ff8a12ec5f4091503eda0ebe8d2, type: 3}
---- !u!114 &8453316304400397209 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3791049688305630777, guid: b3e76ff8a12ec5f4091503eda0ebe8d2, type: 3}
-  m_PrefabInstance: {fileID: 8453316304400397208}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 51d62863ffe4cfd458f61a287416850f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
