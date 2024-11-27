@@ -105,7 +105,7 @@ public class TraningManager : MonoBehaviour
         foreach (var role in roles)
         {
             if (role.gameObject.activeInHierarchy)
-                role.ReceiveDamage(100);
+                role.ReceiveDamage(role.hp);
         }
     }
     private void TakeDamage()

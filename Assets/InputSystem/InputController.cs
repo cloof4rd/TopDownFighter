@@ -47,33 +47,33 @@ public class InputController : MonoBehaviour
     {
         if (isBlockInput)
             return;
-        currentControlRole.inputData.isAttack1 = true;
-        await Task.Yield();
-        currentControlRole.inputData.isAttack1 = false;
+        //currentControlRole.inputData.isAttack1 = true;
+        //await Task.Yield();
+        //currentControlRole.inputData.isAttack1 = false;
     }
     public async void OnAttack2()
     {
         if (isBlockInput)
             return;
-        currentControlRole.inputData.isAttack2 = true;
-        await Task.Yield();
-        currentControlRole.inputData.isAttack2 = false;
+        //currentControlRole.inputData.isAttack2 = true;
+        //await Task.Yield();
+        //currentControlRole.inputData.isAttack2 = false;
     }
     public async void OnAttack3()
     {
         if (isBlockInput)
             return;
-        currentControlRole.inputData.isAttack3 = true;
-        await Task.Yield();
-        currentControlRole.inputData.isAttack3 = false;
+        //currentControlRole.inputData.isAttack3 = true;
+        //await Task.Yield();
+        //currentControlRole.inputData.isAttack3 = false;
     }
     public async void OnAttack4()
     {
         if (isBlockInput)
             return;
-        currentControlRole.inputData.isAttack4 = true;
-        await Task.Yield();
-        currentControlRole.inputData.isAttack4 = false;
+        //currentControlRole.inputData.isAttack4 = true;
+        //await Task.Yield();
+        //currentControlRole.inputData.isAttack4 = false;
     }
     public async void OnBlockSkill()
     {

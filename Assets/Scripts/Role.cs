@@ -51,7 +51,6 @@ public class Role : MonoBehaviour
     public int frameCountPerSeconed = 30;
     public RoleFSMStateMachine animFSM;
 
-
     public bool isCanMove = true;
     public bool isAttacking = false;
     public InputData inputData = new InputData();
@@ -70,7 +69,7 @@ public class Role : MonoBehaviour
             _hp = value;
         }
     }
-    private float _hp = 100;
+    private float _hp = 120;
     public bool isBlockBullet, isMissBullet;
     public bool isDead = false;
 
@@ -181,7 +180,7 @@ public class Role : MonoBehaviour
             PopupTextManager.PopupBlock(this.transform.position, "Block");
             OnPlayerBlocked?.Invoke(this);
             OnBlockSuccess?.Invoke();
-            return;
+            damage = 3;
         }
         if (isMissBullet)
         {

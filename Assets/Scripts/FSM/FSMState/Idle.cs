@@ -12,6 +12,7 @@ public class Idle : RoleBasicState
         base.OnUpdate();
         if (role.inputData.isMoveing && role.isCanMove)
             stateMachine.Change<Run>();
+
         if (role.inputData.isAttack1)
             stateMachine.Change<Attack1>();
         if (role.inputData.isAttack2)
