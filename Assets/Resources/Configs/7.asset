@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
   m_Name: 7
   m_EditorClassIdentifier: 
-  roleName: 7Sentinel
+  roleName: Garrick
   artPath: RoleArts/7Sentinel
   moveSpeed: 1
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs: []
@@ -40,6 +42,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack2
+      skillName: Shield Bash
       animSpeed: 1
       SkillInputKey: "B\u2190\u2190"
       fxs: []
@@ -57,6 +60,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack3
+      skillName: Titan's Smash
       animSpeed: 1
       SkillInputKey: "A\u2193\u2193"
       fxs: []
@@ -74,6 +78,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: Unyielding Rampage
       animSpeed: 1
       SkillInputKey: "T\u2193\u2191A"
       fxs: []

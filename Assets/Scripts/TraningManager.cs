@@ -61,6 +61,13 @@ public class TraningManager : MonoBehaviour
         InputController.onSwitchNextRole += ShowNextRole;
         InputController.onSwitchPrevRole += ShowPrevRole;
     }
+    private void OnDestroy()
+    {
+        InputController.onPlayDieAnim -= Die;
+        InputController.onPlayTakeDamageAnim -= TakeDamage;
+        InputController.onSwitchNextRole -= ShowNextRole;
+        InputController.onSwitchPrevRole -= ShowPrevRole;
+    }
 
     private void OnlyShowTarget(int tmpI)
     {

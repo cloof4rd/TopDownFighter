@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
   m_Name: 3
   m_EditorClassIdentifier: 
-  roleName: 3Shaman
+  roleName: Ruun
   artPath: RoleArts/3Shaman
   moveSpeed: 1
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs:
@@ -47,6 +49,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 1
     - animName: Attack2
+      skillName: Storm Shock
       animSpeed: 1
       SkillInputKey: "A\u2192\u2192B"
       fxs:
@@ -71,6 +74,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 1
     - animName: Attack3
+      skillName: Lightning Field
       animSpeed: 1
       SkillInputKey: "Y\u2190\u2190A"
       fxs:
@@ -95,6 +99,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: Tornado Overload
       animSpeed: 1
       SkillInputKey: TYAB
       fxs:

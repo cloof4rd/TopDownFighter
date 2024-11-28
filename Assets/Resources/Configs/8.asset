@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
   m_Name: 8
   m_EditorClassIdentifier: 
-  roleName: 8Spirit
+  roleName: Jiao
   artPath: RoleArts/8Spirit
   moveSpeed: 1
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: Hellish tentacle
       animSpeed: 1
       SkillInputKey: "AA\u2192\u2192"
       fxs:
@@ -47,6 +49,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack2
+      skillName: Soul Swipe
       animSpeed: 1
       SkillInputKey: "A\u2192\u2192"
       fxs:
@@ -71,6 +74,7 @@ MonoBehaviour:
         moveSpeed: 2.78
         isPlaySwingSound: 0
     - animName: Attack3
+      skillName: Eternal Inferno
       animSpeed: 1
       SkillInputKey: "YAB\u2193"
       fxs:
@@ -95,6 +99,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs:

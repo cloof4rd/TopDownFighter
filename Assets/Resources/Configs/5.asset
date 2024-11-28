@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
   m_Name: 5
   m_EditorClassIdentifier: 
-  roleName: 5Ninja
+  roleName: Kiro
   artPath: RoleArts/5Ninja
   moveSpeed: 1
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs: []
@@ -40,6 +42,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack2
+      skillName: Blade Flurry
       animSpeed: 1
       SkillInputKey: "Y\u2192\u2190B"
       fxs: []
@@ -69,6 +72,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack3
+      skillName: Twin Slash
       animSpeed: 1
       SkillInputKey: ABA
       fxs: []
@@ -86,6 +90,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: Circle of Death
       animSpeed: 1
       SkillInputKey: AAYY
       fxs: []

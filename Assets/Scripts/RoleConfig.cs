@@ -35,6 +35,7 @@ public class AnimSpeedConfig
 public class AnimSpeedPair
 {
     public string animName;
+    public string skillName;
     public float animSpeed = 1;
     public string SkillInputKey;
     public List<FXConfig> fxs;

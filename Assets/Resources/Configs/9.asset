@@ -18,11 +18,13 @@ MonoBehaviour:
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs: []
@@ -40,6 +42,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack2
+      skillName: Phantom Smash
       animSpeed: 1
       SkillInputKey: "BB\u2190A"
       fxs: []
@@ -69,6 +72,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack3
+      skillName: Blade Strike
       animSpeed: 1
       SkillInputKey: BBY
       fxs: []
@@ -86,6 +90,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: Shadow Tempest
       animSpeed: 1
       SkillInputKey: "\u2190AB\u2192"
       fxs:

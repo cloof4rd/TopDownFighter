@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
             InitCharacterIndexByPlayerIndex(1);
         }
         InitCharacterIndexByPlayerIndex(2);
-        InputController.onPause += () => GameManager.Instance.GamePauseToggle();
+        InputController.onPause += (roleIndex) => GameManager.Instance.GamePauseToggle();
 
     }
 

@@ -1,3 +1,5 @@
+using System.Linq;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using YogiGameCore.Utils;
@@ -8,11 +10,20 @@ public class PausePanel : MonoBehaviour
     bool isShow = false;
     public int ExitSceneIndex = 1;
     public static PausePanel Instance;
+
+    private int displayRoleIndex = -1;
+    RoleConfig[] roleConfigs;
+    public SkillInputRows[] rows;
+    public TextMeshProUGUI displayRoleNameText;
+    public bool isActiveRestartFuncion = true;
+
     private void Awake()
     {
         Instance = this;
         controllers = GameObject.FindObjectsOfType<InputController>();
         InputController.onPause += TriggerPausePanel;
+
+        roleConfigs = Resources.LoadAll<RoleConfig>("Configs");
     }
     private void OnDestroy()
     {
@@ -22,8 +33,9 @@ public class PausePanel : MonoBehaviour
         InputController.onExitGame -= EnterRoleSelectScene;
         Time.timeScale = 1;
     }
-    void TriggerPausePanel()
+    void TriggerPausePanel(int roleIndex)
     {
+        displayRoleIndex = roleIndex - 1;
         isShow = !isShow;
         if (isShow)
             Show();
@@ -49,6 +61,25 @@ public class PausePanel : MonoBehaviour
         InputController.onContinueGame += Hide;
         this.gameObject.SetActive(true);
         isShow = true;
+
+        var config = roleConfigs[displayRoleIndex];
+
+        var roleName = config.roleName;
+        displayRoleNameText.text = roleName;
+
+        rows.ForEach(row => row.gameObject.SetActive(false));
+        var currentRowIndex = 0;
+        config.animSpeedConfig.data
+            .Where(x => x.SkillInputKey.IsNotNullAndEmpty() && x.SkillInputKey != "X")
+            .ForEach(data =>
+            {
+                var displayName = data.skillName;
+                var displaySkillInput = data.SkillInputKey;
+                // 显示技能名与技能按键信息
+                rows[currentRowIndex].gameObject.SetActive(true);
+                rows[currentRowIndex].InitSkill(displayName, displaySkillInput);
+                currentRowIndex++;
+            });
     }
     public void Hide()
     {
@@ -69,6 +100,8 @@ public class PausePanel : MonoBehaviour
 
     public void RestartBattle()
     {
+        if (!isActiveRestartFuncion)
+            return;
         Time.timeScale = 1;
         var currentIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentIndex);

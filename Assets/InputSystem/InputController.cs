@@ -11,7 +11,11 @@ public class InputController : MonoBehaviour
     public Role currentControlRole;
     public bool isBlockInput = false;
     public Action onSubmit, onCancel;
-    public static Action onRestartGame, onExitGame, onContinueGame, onPause;
+    public static Action onRestartGame, onExitGame, onContinueGame;
+    /// <summary>
+    /// ‘›Õ£”Œœ∑ <RoleIndex>
+    /// </summary>
+    public static Action<int> onPause;
 
     public static Action onPlayDieAnim, onPlayTakeDamageAnim, onSwitchNextRole, onSwitchPrevRole;
 
@@ -129,7 +133,7 @@ public class InputController : MonoBehaviour
     }
     public void OnPause()
     {
-        onPause?.Invoke();
+        onPause?.Invoke(currentControlRole.roleIndex);
     }
     private void OnSubmit()
     {

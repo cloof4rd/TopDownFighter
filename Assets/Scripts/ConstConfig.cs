@@ -1,16 +1,8 @@
-﻿
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ConstConfig
 {
     public const int ArtRoleSpriteColumnCount = 15;
-    public static string[] ArtResourcePathArr =
-    {
-        "RoleArts/1Spearman",
-        "RoleArts/2DayWalker",
-        "RoleArts/9Broadsword"
-    };
     public const string MAP_RESOURCE_PATH = "Map/Dungeon Arena";
 
     public const int MENU_SCENE_INDEX = 0;
@@ -29,4 +21,9 @@ public class ConstConfig
 
     // PlayerPrefs Key
     public const string MAP_SELECT_KEY = "MapSelect";
+
+    /// <summary>
+    /// 技能按键连击最长时间限制 越短 技能越难按
+    /// </summary>
+    public const float KEY_INPUT_TIME = .5f;
 }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine;
 public class SkillInputController
 {
     private List<SkillState> skills = new List<SkillState>();
@@ -36,7 +35,7 @@ public class SkillState
 {
     private string skillStr;
     private float timer;
-    private const float ClearInputTime = .5f;
+    private float ClearInputTime;
     private int currentMatchIndex = 0;
     private int skillID;
     public event Action OnCastSkillSuccess;
@@ -44,6 +43,7 @@ public class SkillState
     public SkillState(string skillStr)
     {
         this.skillStr = skillStr;
+        ClearInputTime = ConstConfig.KEY_INPUT_TIME;
     }
 
     public void Update(float deltaTime)

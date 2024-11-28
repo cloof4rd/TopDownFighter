@@ -12,17 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d377f63d9738214c83290bd31d3d06d, type: 3}
   m_Name: 6
   m_EditorClassIdentifier: 
-  roleName: 6Druid
+  roleName: Sylva
   artPath: RoleArts/6Druid
   moveSpeed: 1
   animSpeedConfig:
     data:
     - animName: Idle2
+      skillName: 
       animSpeed: 2
       SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
+      skillName: 
       animSpeed: 1
       SkillInputKey: X
       fxs: []
@@ -40,6 +42,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack2
+      skillName: Nature's Wrath
       animSpeed: 1
       SkillInputKey: "A\u2192\u2190B"
       fxs:
@@ -64,6 +67,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack3
+      skillName: Vine Lash
       animSpeed: 1
       SkillInputKey: "YY\u2193"
       fxs: []
@@ -81,6 +85,7 @@ MonoBehaviour:
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
+      skillName: Thorn Aim
       animSpeed: 1
       SkillInputKey: BBAA
       fxs:
