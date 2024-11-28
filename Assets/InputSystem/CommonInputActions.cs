@@ -143,6 +143,24 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""SkillDir"",
+                    ""type"": ""Value"",
+                    ""id"": ""dcd81f06-22d4-43da-8fe7-ae3eca4350dc"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""RT"",
+                    ""type"": ""Button"",
+                    ""id"": ""57516552-3c8e-4a64-8c1a-6e7f1f2ae6e7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -528,6 +546,39 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""SwitchPrevRole"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3f5493f7-5b1a-480c-8f26-de42ff891a01"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""31c1889f-6daf-4694-823d-883c0e3cb676"",
+                    ""path"": ""<Gamepad>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SkillDir"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0020a115-7f43-407a-9cac-4891949f4b5c"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RT"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1188,6 +1239,8 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         m_Gameplay_PlayTakeDamageAnim = m_Gameplay.FindAction("PlayTakeDamageAnim", throwIfNotFound: true);
         m_Gameplay_SwitchNextRole = m_Gameplay.FindAction("SwitchNextRole", throwIfNotFound: true);
         m_Gameplay_SwitchPrevRole = m_Gameplay.FindAction("SwitchPrevRole", throwIfNotFound: true);
+        m_Gameplay_SkillDir = m_Gameplay.FindAction("SkillDir", throwIfNotFound: true);
+        m_Gameplay_RT = m_Gameplay.FindAction("RT", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1277,6 +1330,8 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
     private readonly InputAction m_Gameplay_PlayTakeDamageAnim;
     private readonly InputAction m_Gameplay_SwitchNextRole;
     private readonly InputAction m_Gameplay_SwitchPrevRole;
+    private readonly InputAction m_Gameplay_SkillDir;
+    private readonly InputAction m_Gameplay_RT;
     public struct GameplayActions
     {
         private @CommonInputActions m_Wrapper;
@@ -1294,6 +1349,8 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         public InputAction @PlayTakeDamageAnim => m_Wrapper.m_Gameplay_PlayTakeDamageAnim;
         public InputAction @SwitchNextRole => m_Wrapper.m_Gameplay_SwitchNextRole;
         public InputAction @SwitchPrevRole => m_Wrapper.m_Gameplay_SwitchPrevRole;
+        public InputAction @SkillDir => m_Wrapper.m_Gameplay_SkillDir;
+        public InputAction @RT => m_Wrapper.m_Gameplay_RT;
         public InputActionMap Get() { return m_Wrapper.m_Gameplay; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1342,6 +1399,12 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @SwitchPrevRole.started += instance.OnSwitchPrevRole;
             @SwitchPrevRole.performed += instance.OnSwitchPrevRole;
             @SwitchPrevRole.canceled += instance.OnSwitchPrevRole;
+            @SkillDir.started += instance.OnSkillDir;
+            @SkillDir.performed += instance.OnSkillDir;
+            @SkillDir.canceled += instance.OnSkillDir;
+            @RT.started += instance.OnRT;
+            @RT.performed += instance.OnRT;
+            @RT.canceled += instance.OnRT;
         }
 
         private void UnregisterCallbacks(IGameplayActions instance)
@@ -1385,6 +1448,12 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
             @SwitchPrevRole.started -= instance.OnSwitchPrevRole;
             @SwitchPrevRole.performed -= instance.OnSwitchPrevRole;
             @SwitchPrevRole.canceled -= instance.OnSwitchPrevRole;
+            @SkillDir.started -= instance.OnSkillDir;
+            @SkillDir.performed -= instance.OnSkillDir;
+            @SkillDir.canceled -= instance.OnSkillDir;
+            @RT.started -= instance.OnRT;
+            @RT.performed -= instance.OnRT;
+            @RT.canceled -= instance.OnRT;
         }
 
         public void RemoveCallbacks(IGameplayActions instance)
@@ -1604,6 +1673,8 @@ public partial class @CommonInputActions: IInputActionCollection2, IDisposable
         void OnPlayTakeDamageAnim(InputAction.CallbackContext context);
         void OnSwitchNextRole(InputAction.CallbackContext context);
         void OnSwitchPrevRole(InputAction.CallbackContext context);
+        void OnSkillDir(InputAction.CallbackContext context);
+        void OnRT(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

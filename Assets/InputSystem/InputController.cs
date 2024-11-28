@@ -42,19 +42,55 @@ public class InputController : MonoBehaviour
         var data = currentControlRole.inputData;
         data.moveDir = v.Get<Vector2>();
         data.isMoveing = data.moveDir.sqrMagnitude > 0.1f;
+        var dir = data.moveDir;
+    }
+    private char prevInputDirection = '_';
+    public void OnSkillDir(InputValue v)
+    {
+        if (isBlockInput)
+            return;
+        var dir = v.Get<Vector2>();
+        char inputDirection = '_';
+        if (dir.x > .5f)
+        {
+            inputDirection = '¡ú';
+        }
+        else if (dir.y > .5f)
+        {
+            inputDirection = '¡ü';
+        }
+        else if (dir.x < -.5f)
+        {
+            inputDirection = '¡û';
+        }
+        else if (dir.y < -.5f)
+        {
+            inputDirection = '¡ý';
+        }
+        if (inputDirection != prevInputDirection)
+        {
+            if (inputDirection != '_')
+                currentControlRole.InputSkillOrder(inputDirection);
+            prevInputDirection = inputDirection;
+        }
+    }
+    public void OnRT()
+    {
+        if (isBlockInput)
+            return;
+        currentControlRole.InputSkillOrder('T');
     }
     public async void OnAttack1()
     {
         if (isBlockInput)
             return;
-        //currentControlRole.inputData.isAttack1 = true;
-        //await Task.Yield();
-        //currentControlRole.inputData.isAttack1 = false;
+        currentControlRole.InputSkillOrder('X');
     }
     public async void OnAttack2()
     {
         if (isBlockInput)
             return;
+        currentControlRole.InputSkillOrder('Y');
         //currentControlRole.inputData.isAttack2 = true;
         //await Task.Yield();
         //currentControlRole.inputData.isAttack2 = false;
@@ -63,6 +99,7 @@ public class InputController : MonoBehaviour
     {
         if (isBlockInput)
             return;
+        currentControlRole.InputSkillOrder('A');
         //currentControlRole.inputData.isAttack3 = true;
         //await Task.Yield();
         //currentControlRole.inputData.isAttack3 = false;
@@ -71,6 +108,7 @@ public class InputController : MonoBehaviour
     {
         if (isBlockInput)
             return;
+        currentControlRole.InputSkillOrder('B');
         //currentControlRole.inputData.isAttack4 = true;
         //await Task.Yield();
         //currentControlRole.inputData.isAttack4 = false;

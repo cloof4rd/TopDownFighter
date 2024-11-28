@@ -19,10 +19,12 @@ MonoBehaviour:
     data:
     - animName: Idle2
       animSpeed: 2
+      SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
       animSpeed: 1
+      SkillInputKey: X
       fxs:
       - spawnFrameIndex: 5
         fxName: FX/Projectiles/FireSpellPrefab
@@ -40,12 +42,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.18
         sectorAngle: 0
-        damage: 30
+        damage: 10
         isMove: 1
         moveSpeed: 1
         isPlaySwingSound: 1
     - animName: Attack2
       animSpeed: 1
+      SkillInputKey: "A\u2192\u2192B"
       fxs:
       - spawnFrameIndex: 5
         fxName: FX/Projectiles/FireTotemPrefab
@@ -63,12 +66,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.58
         sectorAngle: 0
-        damage: 50
+        damage: 35
         isMove: 0
         moveSpeed: 1
         isPlaySwingSound: 1
     - animName: Attack3
       animSpeed: 1
+      SkillInputKey: "Y\u2190\u2190A"
       fxs:
       - spawnFrameIndex: 9
         fxName: FX/Projectiles/IceTotemPrefab
@@ -86,12 +90,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.5
         sectorAngle: 0
-        damage: 10
+        damage: 35
         isMove: 0
         moveSpeed: 1
         isPlaySwingSound: 0
     - animName: Attack4
       animSpeed: 1
+      SkillInputKey: TYAB
       fxs:
       - spawnFrameIndex: 3
         fxName: FX/Projectiles/PoisonTotemPrefab
@@ -109,7 +114,7 @@ MonoBehaviour:
         selectType: 0
         radius: 0.59
         sectorAngle: 0
-        damage: 20
+        damage: 50
         isMove: 0
         moveSpeed: 1
         isPlaySwingSound: 0

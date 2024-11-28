@@ -75,6 +75,17 @@ public class Role : MonoBehaviour
 
     public Material commonMat, outlineMat;
     public Color outlineColor;
+
+    private SkillInputController skillInputController;
+    public void AddSkill(string skillStr, Action onCastSkill)
+    {
+        skillInputController.AddSkill(skillStr, onCastSkill);
+    }
+    public void InputSkillOrder(char order)
+    {
+        skillInputController.HanleInput(order);
+    }
+
     [Button]
     public void SetOutline(bool isOutline)
     {
@@ -102,11 +113,13 @@ public class Role : MonoBehaviour
         this.roleIndex = index;
         InitConfigByRoleIndex();
         await UniTask.Yield();
+        skillInputController = new SkillInputController();
         animFSM = new RoleFSMStateMachine(this);
     }
 
     private void Update()
     {
+        skillInputController.Tick(Time.deltaTime);
         if (isDead)
             return;
         if (inputData.isMoveing && !isAttacking && isCanMove)
@@ -114,7 +127,6 @@ public class Role : MonoBehaviour
             UpdateDirectionByInput();
             UpdateMovement();
         }
-
     }
 
     private void UpdateDirectionByInput()

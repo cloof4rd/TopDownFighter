@@ -19,58 +19,12 @@ MonoBehaviour:
     data:
     - animName: Idle2
       animSpeed: 2
+      SkillInputKey: 
       fxs: []
       bullets: []
-    - animName: Attack1
-      animSpeed: 1
-      fxs: []
-      bullets:
-      - spawnFrameIndex: 8
-        bulletName: Bullets/Attack
-        bulletPosition: {x: 0, y: 0.25}
-        lifeTime: 0.1
-        isDestroyWhenAnimOver: 1
-        selectType: 0
-        radius: 0.2
-        sectorAngle: 360
-        damage: 10
-        isMove: 0
-        moveSpeed: 1
-        isPlaySwingSound: 1
-    - animName: Attack2
-      animSpeed: 1
-      fxs: []
-      bullets:
-      - spawnFrameIndex: 8
-        bulletName: Bullets/Attack
-        bulletPosition: {x: 0, y: 0}
-        lifeTime: 0.2
-        isDestroyWhenAnimOver: 1
-        selectType: 1
-        radius: 0.3
-        sectorAngle: 180
-        damage: 20
-        isMove: 0
-        moveSpeed: 1
-        isPlaySwingSound: 1
-    - animName: Attack3
-      animSpeed: 1
-      fxs: []
-      bullets:
-      - spawnFrameIndex: 8
-        bulletName: Bullets/Attack
-        bulletPosition: {x: 0, y: 0}
-        lifeTime: 0.2
-        isDestroyWhenAnimOver: 1
-        selectType: 0
-        radius: 0.3
-        sectorAngle: 360
-        damage: 20
-        isMove: 0
-        moveSpeed: 1
-        isPlaySwingSound: 1
     - animName: Attack4
       animSpeed: 1
+      SkillInputKey: "B\u2192\u2192"
       fxs:
       - spawnFrameIndex: 6
         fxName: FX/Projectiles/Arrow
@@ -88,7 +42,58 @@ MonoBehaviour:
         selectType: 0
         radius: 0.2
         sectorAngle: 0
-        damage: 5
+        damage: 25
         isMove: 1
         moveSpeed: 1
         isPlaySwingSound: 0
+    - animName: Attack1
+      animSpeed: 1
+      SkillInputKey: "YB\u2192\u2192"
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 8
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.25}
+        lifeTime: 0.1
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.2
+        sectorAngle: 360
+        damage: 40
+        isMove: 1
+        moveSpeed: 1
+        isPlaySwingSound: 1
+    - animName: Attack2
+      animSpeed: 1
+      SkillInputKey: X
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 8
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 0.2
+        isDestroyWhenAnimOver: 1
+        selectType: 1
+        radius: 0.3
+        sectorAngle: 180
+        damage: 20
+        isMove: 0
+        moveSpeed: 1
+        isPlaySwingSound: 1
+    - animName: Attack3
+      animSpeed: 1
+      SkillInputKey: "Y\u2193\u2193"
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 8
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 0.2
+        isDestroyWhenAnimOver: 1
+        selectType: 0
+        radius: 0.3
+        sectorAngle: 360
+        damage: 30
+        isMove: 0
+        moveSpeed: 1
+        isPlaySwingSound: 1

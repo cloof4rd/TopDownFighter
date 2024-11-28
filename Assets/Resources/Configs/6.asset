@@ -19,10 +19,12 @@ MonoBehaviour:
     data:
     - animName: Idle2
       animSpeed: 2
+      SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
       animSpeed: 1
+      SkillInputKey: X
       fxs: []
       bullets:
       - spawnFrameIndex: 5
@@ -33,11 +35,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 20
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack2
       animSpeed: 1
+      SkillInputKey: "A\u2192\u2190B"
       fxs:
       - spawnFrameIndex: 6
         fxName: FX/Projectiles/IceAoEPrefab
@@ -55,11 +59,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.76
         sectorAngle: 0
-        damage: 30
+        damage: 55
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack3
       animSpeed: 1
+      SkillInputKey: "YY\u2193"
       fxs: []
       bullets:
       - spawnFrameIndex: 2
@@ -70,11 +76,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 25
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack4
       animSpeed: 1
+      SkillInputKey: BBAA
       fxs:
       - spawnFrameIndex: 6
         fxName: FX/Projectiles/IceSpellPrefab
@@ -92,6 +100,7 @@ MonoBehaviour:
         selectType: 0
         radius: 0.2
         sectorAngle: 0
-        damage: 5
+        damage: 35
         isMove: 1
         moveSpeed: 2.4
+        isPlaySwingSound: 0

@@ -19,10 +19,12 @@ MonoBehaviour:
     data:
     - animName: Idle2
       animSpeed: 2
+      SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
       animSpeed: 1
+      SkillInputKey: X
       fxs: []
       bullets:
       - spawnFrameIndex: 5
@@ -33,11 +35,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 20
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack2
       animSpeed: 1
+      SkillInputKey: "Y\u2192\u2190B"
       fxs: []
       bullets:
       - spawnFrameIndex: 5
@@ -48,9 +52,10 @@ MonoBehaviour:
         selectType: 0
         radius: 0.35
         sectorAngle: 0
-        damage: 30
+        damage: 35
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
       - spawnFrameIndex: 10
         bulletName: Bullets/Attack
         bulletPosition: {x: 0, y: 0}
@@ -59,11 +64,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.35
         sectorAngle: 0
-        damage: 30
+        damage: 35
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack3
       animSpeed: 1
+      SkillInputKey: ABA
       fxs: []
       bullets:
       - spawnFrameIndex: 9
@@ -74,11 +81,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 25
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack4
       animSpeed: 1
+      SkillInputKey: AAYY
       fxs: []
       bullets:
       - spawnFrameIndex: 3
@@ -89,6 +98,7 @@ MonoBehaviour:
         selectType: 0
         radius: 0.32
         sectorAngle: 0
-        damage: 5
+        damage: 35
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0

@@ -19,10 +19,12 @@ MonoBehaviour:
     data:
     - animName: Idle2
       animSpeed: 2
+      SkillInputKey: 
       fxs: []
       bullets: []
     - animName: Attack1
       animSpeed: 1
+      SkillInputKey: X
       fxs: []
       bullets:
       - spawnFrameIndex: 5
@@ -33,11 +35,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 10
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack2
       animSpeed: 1
+      SkillInputKey: "\u2192BB\u2193"
       fxs:
       - spawnFrameIndex: 5
         fxName: FX/Projectiles/HolyAoEPrefab
@@ -55,11 +59,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.75
         sectorAngle: 0
-        damage: 30
+        damage: 50
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack3
       animSpeed: 1
+      SkillInputKey: BAB
       fxs: []
       bullets:
       - spawnFrameIndex: 9
@@ -70,11 +76,13 @@ MonoBehaviour:
         selectType: 0
         radius: 0.3
         sectorAngle: 0
-        damage: 30
+        damage: 20
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
     - animName: Attack4
       animSpeed: 1
+      SkillInputKey: YBY
       fxs: []
       bullets:
       - spawnFrameIndex: 3
@@ -85,6 +93,7 @@ MonoBehaviour:
         selectType: 0
         radius: 0.35
         sectorAngle: 0
-        damage: 5.07
+        damage: 30
         isMove: 0
         moveSpeed: 1
+        isPlaySwingSound: 0
