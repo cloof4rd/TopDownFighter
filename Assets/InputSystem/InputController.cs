@@ -13,7 +13,7 @@ public class InputController : MonoBehaviour
     public Action onSubmit, onCancel;
     public static Action onRestartGame, onExitGame, onContinueGame;
     /// <summary>
-    /// ÔİÍ£ÓÎÏ· <RoleIndex>
+    /// æš‚åœæ¸¸æˆ <RoleIndex>
     /// </summary>
     public static Action<int> onPause;
 
@@ -57,19 +57,19 @@ public class InputController : MonoBehaviour
         char inputDirection = '_';
         if (dir.x > .5f)
         {
-            inputDirection = '¡ú';
+            inputDirection = 'â†’';
         }
         else if (dir.y > .5f)
         {
-            inputDirection = '¡ü';
+            inputDirection = 'â†‘';
         }
         else if (dir.x < -.5f)
         {
-            inputDirection = '¡û';
+            inputDirection = 'â†';
         }
         else if (dir.y < -.5f)
         {
-            inputDirection = '¡ı';
+            inputDirection = 'â†“';
         }
         if (inputDirection != prevInputDirection)
         {
