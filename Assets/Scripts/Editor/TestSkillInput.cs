@@ -8,8 +8,8 @@ public class TestSkillInput
     {
         bool isNeedCastSkill = false;
         SkillInputController c = new SkillInputController();
-        c.AddSkill("ABC¡ü", () => { isNeedCastSkill = true; Debug.Log("Cast ABC¡ü"); });
-        c.AddSkill("BCD¡ý", () => { Debug.Log("Cast BCD¡ý"); });
+        c.AddSkill("ABCâ†‘", () => { isNeedCastSkill = true; Debug.Log("Cast ABCâ†‘"); });
+        c.AddSkill("BCDâ†“", () => { Debug.Log("Cast BCDâ†“"); });
 
         c.Tick(Time.deltaTime);
         c.HanleInput('A');
@@ -18,7 +18,7 @@ public class TestSkillInput
         c.Tick(Time.deltaTime);
         c.HanleInput('C');
         c.Tick(Time.deltaTime);
-        c.HanleInput('¡ü');
+        c.HanleInput('â†‘');
         c.Tick(Time.deltaTime);
 
 
@@ -30,8 +30,8 @@ public class TestSkillInput
     {
         bool isNeedCastSkill = false;
         SkillInputController c = new SkillInputController();
-        c.AddSkill("ABC¡ü", () => { Debug.Log("Cast ABC¡ü"); });
-        c.AddSkill("BCD¡ý", () => { isNeedCastSkill = true; Debug.Log("Cast BCD¡ý"); });
+        c.AddSkill("ABCâ†‘", () => { Debug.Log("Cast ABCâ†‘"); });
+        c.AddSkill("BCDâ†“", () => { isNeedCastSkill = true; Debug.Log("Cast BCDâ†“"); });
 
         c.Tick(Time.deltaTime);
         c.HanleInput('B');
@@ -39,7 +39,7 @@ public class TestSkillInput
         c.HanleInput('C');
         c.Tick(Time.deltaTime);
         c.HanleInput('D');
-        c.HanleInput('¡ý');
+        c.HanleInput('â†“');
         Assert.AreEqual(true, isNeedCastSkill);
     }
 
@@ -48,8 +48,8 @@ public class TestSkillInput
     {
         bool isNeedCastSkill1 = false, isNeedCastSkill2 = false;
         SkillInputController c = new SkillInputController();
-        c.AddSkill("ABC¡ü", () => { isNeedCastSkill1 = true; Debug.Log("Cast ABC¡ü"); });
-        c.AddSkill("ABC¡ü¡ü", () => { isNeedCastSkill2 = true; Debug.Log("ABC¡ü¡ü"); });
+        c.AddSkill("ABCâ†‘", () => { isNeedCastSkill1 = true; Debug.Log("Cast ABCâ†‘"); });
+        c.AddSkill("ABCâ†‘â†‘", () => { isNeedCastSkill2 = true; Debug.Log("ABCâ†‘â†‘"); });
 
         c.Tick(Time.deltaTime);
         c.HanleInput('A');
@@ -57,8 +57,8 @@ public class TestSkillInput
         c.HanleInput('B');
         c.Tick(Time.deltaTime);
         c.HanleInput('C');
-        c.HanleInput('¡ü');
-        c.HanleInput('¡ü');
+        c.HanleInput('â†‘');
+        c.HanleInput('â†‘');
         Assert.AreEqual(true, isNeedCastSkill1 & isNeedCastSkill2);
     }
 
@@ -67,8 +67,8 @@ public class TestSkillInput
     {
         bool isNeedCastSkill1 = false, isNeedCastSkill2 = false;
         SkillInputController c = new SkillInputController();
-        c.AddSkill("ABC¡ü", () => { isNeedCastSkill1 = true; Debug.Log("Cast ABC¡ü"); });
-        c.AddSkill("ABC¡ü¡ü", () => { isNeedCastSkill2 = true; Debug.Log("ABC¡ü¡ü"); });
+        c.AddSkill("ABCâ†‘", () => { isNeedCastSkill1 = true; Debug.Log("Cast ABCâ†‘"); });
+        c.AddSkill("ABCâ†‘â†‘", () => { isNeedCastSkill2 = true; Debug.Log("ABCâ†‘â†‘"); });
 
         c.Tick(Time.deltaTime);
         c.HanleInput('A');
@@ -76,9 +76,9 @@ public class TestSkillInput
         c.HanleInput('B');
         c.Tick(Time.deltaTime);
         c.HanleInput('C');
-        c.HanleInput('¡ü');
+        c.HanleInput('â†‘');
         c.Tick(10.0f);
-        c.HanleInput('¡ü');
+        c.HanleInput('â†‘');
         Assert.AreEqual(false, isNeedCastSkill1 && isNeedCastSkill2);
     }
 }
