@@ -75,7 +75,7 @@ public class PausePanel : MonoBehaviour
             {
                 var displayName = data.skillName;
                 var displaySkillInput = data.SkillInputKey;
-                // ÏÔÊ¾¼¼ÄÜÃûÓë¼¼ÄÜ°´¼üĞÅÏ¢
+                // æ˜¾ç¤ºæŠ€èƒ½åä¸æŠ€èƒ½æŒ‰é”®ä¿¡æ¯
                 rows[currentRowIndex].gameObject.SetActive(true);
                 rows[currentRowIndex].InitSkill(displayName, displaySkillInput);
                 currentRowIndex++;
