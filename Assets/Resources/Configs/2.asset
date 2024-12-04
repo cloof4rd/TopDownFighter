@@ -44,7 +44,7 @@ MonoBehaviour:
     - animName: Attack2
       skillName: "Death\u2019s Cross"
       animSpeed: 1
-      SkillInputKey: "\u2190\u2191\u2193\u2192"
+      SkillInputKey: "\u2191\u2191\u2193"
       fxs: []
       bullets:
       - spawnFrameIndex: 10
@@ -62,7 +62,7 @@ MonoBehaviour:
     - animName: Attack3
       skillName: Shadow Trap
       animSpeed: 1
-      SkillInputKey: "Y\u2193\u2191"
+      SkillInputKey: YBB
       fxs: []
       bullets:
       - spawnFrameIndex: 9
@@ -80,7 +80,7 @@ MonoBehaviour:
     - animName: Attack4
       skillName: Quick Shoot
       animSpeed: 1
-      SkillInputKey: "B\u2192\u2192"
+      SkillInputKey: AA
       fxs:
       - spawnFrameIndex: 6
         fxName: FX/Projectiles/BulletPrefab

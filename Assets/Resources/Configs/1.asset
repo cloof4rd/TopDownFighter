@@ -26,7 +26,7 @@ MonoBehaviour:
     - animName: Attack1
       skillName: Piercing Chaos
       animSpeed: 1
-      SkillInputKey: "YB\u2192\u2192"
+      SkillInputKey: "B\u2192\u2192"
       fxs: []
       bullets:
       - spawnFrameIndex: 8
@@ -62,7 +62,7 @@ MonoBehaviour:
     - animName: Attack3
       skillName: Avalanche Strike
       animSpeed: 1
-      SkillInputKey: "Y\u2193\u2193"
+      SkillInputKey: "B\u2190"
       fxs: []
       bullets:
       - spawnFrameIndex: 8
@@ -80,7 +80,7 @@ MonoBehaviour:
     - animName: Attack4
       skillName: Knife Throwing
       animSpeed: 1
-      SkillInputKey: "B\u2192\u2192"
+      SkillInputKey: "\u2192\u2192"
       fxs:
       - spawnFrameIndex: 6
         fxName: FX/Projectiles/Arrow

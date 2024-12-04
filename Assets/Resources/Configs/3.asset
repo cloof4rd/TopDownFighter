@@ -51,7 +51,7 @@ MonoBehaviour:
     - animName: Attack2
       skillName: Storm Shock
       animSpeed: 1
-      SkillInputKey: "A\u2192\u2192B"
+      SkillInputKey: AA
       fxs:
       - spawnFrameIndex: 5
         fxName: FX/Projectiles/FireTotemPrefab
@@ -76,7 +76,7 @@ MonoBehaviour:
     - animName: Attack3
       skillName: Lightning Field
       animSpeed: 1
-      SkillInputKey: "Y\u2190\u2190A"
+      SkillInputKey: AAB
       fxs:
       - spawnFrameIndex: 9
         fxName: FX/Projectiles/IceTotemPrefab
@@ -101,7 +101,7 @@ MonoBehaviour:
     - animName: Attack4
       skillName: Tornado Overload
       animSpeed: 1
-      SkillInputKey: TYAB
+      SkillInputKey: YBY
       fxs:
       - spawnFrameIndex: 3
         fxName: FX/Projectiles/PoisonTotemPrefab
