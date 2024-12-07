@@ -41,24 +41,6 @@ MonoBehaviour:
         isMove: 1
         moveSpeed: 1
         isPlaySwingSound: 1
-    - animName: Attack2
-      skillName: 
-      animSpeed: 1
-      SkillInputKey: X
-      fxs: []
-      bullets:
-      - spawnFrameIndex: 8
-        bulletName: Bullets/Attack
-        bulletPosition: {x: 0, y: 0}
-        lifeTime: 0.2
-        isDestroyWhenAnimOver: 1
-        selectType: 1
-        radius: 0.3
-        sectorAngle: 180
-        damage: 20
-        isMove: 0
-        moveSpeed: 1
-        isPlaySwingSound: 1
     - animName: Attack3
       skillName: Avalanche Strike
       animSpeed: 1
@@ -102,3 +84,21 @@ MonoBehaviour:
         isMove: 1
         moveSpeed: 1
         isPlaySwingSound: 0
+    - animName: Attack2
+      skillName: 
+      animSpeed: 1
+      SkillInputKey: X
+      fxs: []
+      bullets:
+      - spawnFrameIndex: 8
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0}
+        lifeTime: 0.2
+        isDestroyWhenAnimOver: 1
+        selectType: 1
+        radius: 0.3
+        sectorAngle: 180
+        damage: 20
+        isMove: 0
+        moveSpeed: 1
+        isPlaySwingSound: 1

@@ -48,31 +48,6 @@ MonoBehaviour:
         isMove: 1
         moveSpeed: 1
         isPlaySwingSound: 1
-    - animName: Attack2
-      skillName: Storm Shock
-      animSpeed: 1
-      SkillInputKey: AA
-      fxs:
-      - spawnFrameIndex: 5
-        fxName: FX/Projectiles/FireTotemPrefab
-        fxPosition: {x: 0, y: 0.8}
-        lifeTime: 1
-        isDestroyWhenAnimOver: 0
-        isMove: 0
-        moveSpeed: 0
-      bullets:
-      - spawnFrameIndex: 14
-        bulletName: Bullets/Attack
-        bulletPosition: {x: 0, y: 0.8}
-        lifeTime: 0.1
-        isDestroyWhenAnimOver: 0
-        selectType: 0
-        radius: 0.58
-        sectorAngle: 0
-        damage: 35
-        isMove: 0
-        moveSpeed: 1
-        isPlaySwingSound: 1
     - animName: Attack3
       skillName: Lightning Field
       animSpeed: 1
@@ -98,6 +73,31 @@ MonoBehaviour:
         isMove: 0
         moveSpeed: 1
         isPlaySwingSound: 0
+    - animName: Attack2
+      skillName: Storm Shock
+      animSpeed: 1
+      SkillInputKey: BB
+      fxs:
+      - spawnFrameIndex: 5
+        fxName: FX/Projectiles/FireTotemPrefab
+        fxPosition: {x: 0, y: 0.8}
+        lifeTime: 1
+        isDestroyWhenAnimOver: 0
+        isMove: 0
+        moveSpeed: 0
+      bullets:
+      - spawnFrameIndex: 14
+        bulletName: Bullets/Attack
+        bulletPosition: {x: 0, y: 0.8}
+        lifeTime: 0.1
+        isDestroyWhenAnimOver: 0
+        selectType: 0
+        radius: 0.58
+        sectorAngle: 0
+        damage: 35
+        isMove: 0
+        moveSpeed: 1
+        isPlaySwingSound: 1
     - animName: Attack4
       skillName: Tornado Overload
       animSpeed: 1
